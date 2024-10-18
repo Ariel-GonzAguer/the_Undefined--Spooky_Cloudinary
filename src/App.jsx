@@ -1,32 +1,33 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import styles from './App.module.css'
+// wouter
+import { Route, Switch } from "wouter";
 
-function App() {
-  const [count, setCount] = useState(0)
+import styles from "./App.module.css";
 
+// componentes
+import Intro from "./components/Intro/Intro";
+import SeleccionarFotos from "./components/Intro/SeleccionarFotos";
+import Reto1 from "./components/Retos/Reto1";
+import Reto2 from "./components/Retos/Reto2";
+import Reto3 from "./components/Retos/Reto3";
+import RetoFinal from "./components/Retos/RetoFinal";
+import NotFound from "./components/Intro/NotFound";
+
+export default function App() {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-        </a>
-        <a href="https://react.dev" target="_blank">
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section className={styles.App}>
+        <Switch>
+          <Route path="/" component={Intro} />
+          <Route path="/SeleccionarFotos" component={SeleccionarFotos} />
+          <Route path="Reto1" component={Reto1} />
+          <Route path="Reto2" component={Reto2} />
+          <Route path="Reto3" component={Reto3} />
+          <Route path="RetoFinal" component={RetoFinal} />
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </section>
     </>
-  )
+  );
 }
-
-export default App
