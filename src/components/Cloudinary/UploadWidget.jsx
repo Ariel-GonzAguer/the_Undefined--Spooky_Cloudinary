@@ -13,12 +13,12 @@ export default function UploadWidget({ onUpload }) {
       },
       function (error, result) {
         if (error) {
-          console.error("Error al subir imagen", error);
-          alert("Error al subir imagen", error);
+          console.error("Error al subir imagen. Inténtalo de nuevo", error); // BORRAR AL FINAL
+          alert("Error al subir imagen. Inténtalo de nuevo", error);
           onUpload({ success: false, error });
           return;
         } else if (result.event === "success") {
-          console.log("¡Subida exitosa a Cloudinary!", result.info);
+          console.log("¡Subida exitosa a Cloudinary!", result.info); // BORRAR AL FINAL
           onUpload({ success: true, info: result.info });
         }
       }

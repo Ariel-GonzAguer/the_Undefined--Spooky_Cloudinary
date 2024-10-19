@@ -7,63 +7,22 @@ const useMonsterStore = create(
   persist(
     immer((set) => ({
       // Estados
-      state1: null,
-      state2: false,
-      state3: "ejemplo de tienda zustand",
-      state4: [],
-      state5: {
-        string: "ejemplo de tienda zustand",
-        number: 42,
-      },
+      spookyImagesInStore: null,
+      spookyPromptInStore: "",
 
       // Acciones
-      actionA: (paramOpcional) =>
+      setSpookyImagesForStore: (imgObject) =>
         set((state) => {
-          // Código relacionado con el estado
+          state.spookyImagesInStore = imgObject;
         }),
 
-      actionB: (paramOpcional) =>
+      setSpookyPromptForStore: (spookyString) =>
         set((state) => {
-          // Código relacionado con el estado
-        }),
-
-      fetchAction: async () => {
-        set((state) => {
-          // Código relacionado con el estado
-        });
-
-        try {
-          const response = await fetch(
-            "https://jsonplaceholder.typicode.com/users" // URL de ejemplo
-          );
-          const result = await response.json();
-          set((state) => {
-            // Código relacionado con el estado
-          });
-        } catch (error) {
-          set((state) => {
-            // Código relacionado con el estado
-          });
-        }
-      },
-
-      asyncAction: async (paramOpcional, paramOpcional2) =>
-        setTimeout(
-          () => {
-            set((state) => ({
-              /* Código relacionado con el estado */
-            }));
-          },
-          1000 // Tiempo de ejecución en ms
-        ),
-
-      actionC: () =>
-        set({
-          /* Código relacionado con el estado */
+          state.spookyPromptInStore = spookyString;
         }),
     })),
     {
-      name: "zustand-store", // Nombre de la clave en el local storage
+      name: "monsterStore", // Nombre de la clave en el local storage
     }
   )
 );

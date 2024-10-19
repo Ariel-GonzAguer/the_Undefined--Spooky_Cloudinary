@@ -13,10 +13,8 @@ export default function Intro() {
     setSeleccion(value);
 
     if (value === "entrar") {
-      console.log("entrar"); // BORRAR AL FINAL
       console.log("seleccion ->", seleccion); // BORRAR AL FINAL
     } else if (value === "huir") {
-      console.log("seleccion ->", seleccion); // BORRAR AL FINAL
       toast(`Ahora pueded cerrar la ventana o refrescarla para volver.`, {
         duration: 6666,
       });
@@ -25,7 +23,7 @@ export default function Intro() {
 
   return (
     <>
-      <Toaster position="bottom-center" closeButton visibleToasts={2} />
+      <Toaster position="bottom-center" closeButton visibleToasts={1} />
       <section
         className={`${
           seleccion === null || seleccion === "entrar"
@@ -38,7 +36,7 @@ export default function Intro() {
         <h1>the_Undefined</h1>
         <p>
           Acepta el reto de derrotar a the_Undefined y salva al mundo (de la
-          programación) o huye ahora antes de...
+          programación) o huye ahora...
         </p>
 
         <Link href="/SeleccionarFotos">

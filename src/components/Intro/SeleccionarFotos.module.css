@@ -1,0 +1,61 @@
+.SeleccionarFotos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  height: 100%;
+}
+
+/* loader */
+/* HTML: <div class="loaderSkull"></div> */
+.loaderSkull {
+  margin: 2rem auto;
+  width: 60px;
+  aspect-ratio: 1;
+  background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
+  -webkit-mask: url("/public/imgs/skull-clipart-loader.svg") center/contain
+    no-repeat;
+  mask: url("/imgs/skull-clipart-loader.svg") center/contain no-repeat;
+  animation: l19 2s infinite linear;
+}
+@keyframes l19 {
+  90%,
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.FotosContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  & section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.SpookyPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.imgDeEjemplo {
+  width: 300px;
+}
