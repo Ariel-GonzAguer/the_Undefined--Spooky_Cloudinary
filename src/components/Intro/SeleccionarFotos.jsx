@@ -98,10 +98,8 @@ export default function SeleccionarFotos() {
         const imgInfierno = cld
           .image(uploadResultInfierno.info.public_id)
           .effect(
-            generativeBackgroundReplace().prompt(
-              "walking dead people"
-            )
-          ) // CAMBIAR
+            generativeReplace()
+.from("cat").to("animal monster")) // CAMBIAR
           .resize(scale().width(400));
         setImageLoadedInfierno(imgInfierno);
         setImageReadyInfierno(false);
