@@ -30,8 +30,8 @@ export default function SeleccionarFotos() {
   /*Zustand*/
   // estados para el store
   const [spookyImages, setSpookyImages] = useState({
-    calavera: null,
-    infierno: null,
+    demonio: null,
+    gato: null,
     zombie: null,
     prompted: null,
   });
@@ -65,49 +65,49 @@ export default function SeleccionarFotos() {
     }
   }, [spookyPrompt]);
 
-  // calavera
-  const [uploadResultCalavera, setUploadResultCalavera] = useState(null);
-  const [imageLoadedCalavera, setImageLoadedCalavera] = useState(null);
-  const [imageReadyCalavera, setImageReadyCalavera] = useState(false);
+  // demonio
+  const [uploadResultDemonio, setUploadResultDemonio] = useState(null);
+  const [imageLoadedDemonio, setImageLoadedDemonio] = useState(null);
+  const [imageReadyDemonio, setImageReadyDemonio] = useState(false);
 
   useEffect(() => {
-    if (uploadResultCalavera && uploadResultCalavera.success) {
+    if (uploadResultDemonio && uploadResultDemonio.success) {
       try {
-        const imgCalavera = cld
-          .image(uploadResultCalavera.info.public_id)
+        const imgDemonio = cld
+          .image(uploadResultDemonio.info.public_id)
           .effect(generativeReplace().from("person").to("demoniac monster")) // CAMBIAR?
           .resize(scale().width(400));
-        setImageLoadedCalavera(imgCalavera);
-        setImageReadyCalavera(false);
-        setSpookyImages((prev) => ({ ...prev, calavera: imgCalavera.toURL() }));
-        console.log("calavera img:", imgCalavera.toURL());
+        setImageLoadedDemonio(imgDemonio);
+        setImageReadyDemonio(false);
+        setSpookyImages((prev) => ({ ...prev, demonio: imgDemonio.toURL() }));
+        console.log("demonio img:", imgDemonio.toURL());
       } catch (err) {
         console.error("Error applying effect:", err);
       }
     }
-  }, [uploadResultCalavera]);
+  }, [uploadResultDemonio]);
 
-  // infierno
-  const [uploadResultInfierno, setUploadResultInfierno] = useState(null);
-  const [imageLoadedInfierno, setImageLoadedInfierno] = useState(null);
-  const [imageReadyInfierno, setImageReadyInfierno] = useState(false);
+  // gato
+  const [uploadResultGato, setUploadResultGato] = useState(null);
+  const [imageLoadedGato, setImageLoadedGato] = useState(null);
+  const [imageReadyGato, setImageReadyGato] = useState(false);
 
   useEffect(() => {
-    if (uploadResultInfierno && uploadResultInfierno.success) {
+    if (uploadResultGato && uploadResultGato.success) {
       try {
-        const imgInfierno = cld
-          .image(uploadResultInfierno.info.public_id)
+        const imgGato = cld
+          .image(uploadResultGato.info.public_id)
           .effect(
             generativeReplace()
 .from("cat").to("animal monster")) // CAMBIAR
           .resize(scale().width(400));
-        setImageLoadedInfierno(imgInfierno);
-        setImageReadyInfierno(false);
+        setImageLoadedGato(imgGato);
+        setImageReadyGato(false);
         setSpookyImages((prev) => ({
           ...prev,
-          infierno: imgInfierno.toURL(),
+          gato: imgGato.toURL(),
         }));
-        console.log("fantasmas img:", imgInfierno.toURL());
+        console.log("gato img:", imgGato.toURL());
       } catch (err) {
         console.error("Error applying effect:", err);
       }
@@ -165,17 +165,17 @@ export default function SeleccionarFotos() {
         <section>
           <h3>Demonio</h3>
           <UploadWidget
-            onUpload={(result) => setUploadResultCalavera(result)}
+            onUpload={(result) => setUploadResultDemonio(result)}
           />
-          {imageLoadedCalavera && !imageReadyCalavera && (
+          {imageLoadedDemonio && !imageReadyDemonio && (
             <div className={styles.loaderSkull}></div>
           )}
-          {imageLoadedCalavera && (
+          {imageLoadedDemonio && (
             <AdvancedImage
-              cldImg={imageLoadedCalavera}
+              cldImg={imageLoadedDemonio}
               onLoad={() => {
                 console.log("AdvancedImage onLoad triggered");
-                setImageReadyCalavera(true); // Actualizar el estado cuando la imagen de Cloudinary esté lista
+                setImageReadyDemonio(true); // Actualizar el estado cuando la imagen de Cloudinary esté lista
               }}
               onError={(e) => {
                 console.error("Error loading image:", e);
@@ -183,10 +183,10 @@ export default function SeleccionarFotos() {
                   "Error applying effect. Please try again with a different image."
                 );
               }}
-              style={{ display: imageReadyCalavera ? "block" : "none" }} // Mostrar solo cuando esté lista
+              style={{ display: imageReadyDemonio ? "block" : "none" }} // Mostrar solo cuando esté lista
             />
           )}
-          {!imageLoadedCalavera && (
+          {!imageLoadedGatoemonio && (
             <>
               <p>Ejemplo</p>
               <img
@@ -199,19 +199,19 @@ export default function SeleccionarFotos() {
         </section>
 
         <section>
-          <h3>Infernal</h3>
+          <h3>Gato</h3>
           <UploadWidget
-            onUpload={(result) => setUploadResultInfierno(result)}
+            onUpload={(result) => setUploadResultGato(result)}
           />
-          {imageLoadedInfierno && !imageReadyInfierno && (
+          {imageLoadedGato && !imageReadyGato && (
             <div className={styles.loaderSkull}></div>
           )}
-          {imageLoadedInfierno && (
+          {imageLoadedGato && (
             <AdvancedImage
-              cldImg={imageLoadedInfierno}
+              cldImg={imageLoadedGato}
               onLoad={() => {
                 console.log("AdvancedImage onLoad triggered");
-                setImageReadyInfierno(true); // Actualizar el estado cuando la imagen de Cloudinary esté lista
+                setImageReadyGato(true); // Actualizar el estado cuando la imagen de Cloudinary esté lista
               }}
               onError={(e) => {
                 console.error("Error loading image:", e);
@@ -219,10 +219,10 @@ export default function SeleccionarFotos() {
                   "Error applying effect. Please try again with a different image."
                 );
               }}
-              style={{ display: imageReadyInfierno ? "block" : "none" }} // Mostrar solo cuando esté lista
+              style={{ display: imageReadyGato ? "block" : "none" }} // Mostrar solo cuando esté lista
             />
           )}
-          {!imageLoadedInfierno && (
+          {!imageLoadedGato && (
             <>
               <p>Ejemplo</p>
               <img
