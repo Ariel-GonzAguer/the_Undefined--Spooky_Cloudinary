@@ -75,7 +75,7 @@ export default function SeleccionarFotos() {
       try {
         const imgCalavera = cld
           .image(uploadResultCalavera.info.public_id)
-          .effect(generativeReplace().from("face").to("Halloween monster")) // CAMBIAR?
+          .effect(generativeReplace().from("person").to("demoniac monster")) // CAMBIAR?
           .resize(scale().width(400));
         setImageLoadedCalavera(imgCalavera);
         setImageReadyCalavera(false);
@@ -99,7 +99,7 @@ export default function SeleccionarFotos() {
           .image(uploadResultInfierno.info.public_id)
           .effect(
             generativeBackgroundReplace().prompt(
-              "diabolic simbols"
+              "walking dead people"
             )
           ) // CAMBIAR
           .resize(scale().width(400));
