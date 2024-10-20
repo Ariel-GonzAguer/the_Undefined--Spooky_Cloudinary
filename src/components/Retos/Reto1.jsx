@@ -12,10 +12,12 @@ import { toast, Toaster } from "sonner";
 // imagenes
 import gato1 from "/imgs/gato1.jpg";
 import gato2 from "/imgs/gato2.jpg";
-import gato2Malo from "/imgs/gato2Malo.png";
 import midumichi from "/imgs/midumichi.jpg";
 import gato3 from "/imgs/gato3.jpg";
 import correcto from "/imgs/correcto.png";
+
+// zustand
+import useMonsterStore from "../Zustand/monsterStore";
 
 export default function Reto1() {
   const [gato2ZombieState, setGato2ZombieState] = useState(false);
@@ -23,22 +25,27 @@ export default function Reto1() {
   const [wrongAnswer, setWrongAnswer] = useState(false);
   const [allTrue, setAllTrue] = useState(false);
 
-  function handleConvertToZombie() {
+  // prompted img
+  const { spookyImagesInStore } = useMonsterStore((state) => state);
+  const promptedImg = spookyImagesInStore.prompted;
+
+  // handles
+  function handleRespuestaIncorrecta() {
     setGato2ZombieState(true);
     setWrongAnswer(true);
-    toast(`Has fallado. Refresca la página para volver a interlo`, {
+    toast.error(`Has fallado. Refresca la página para volver a interlo`, {
       duration: 6666,
     });
   }
 
-  function handleAllCool(e) {
+  function handleRespuestasCorrectas(e) {
     const index = e.currentTarget.getAttribute("data-index");
     setRightAnswers((prev) => {
       const newRightAnswers = [...prev];
       newRightAnswers[index] = true;
       return newRightAnswers;
     });
-    console.log("true", index);
+    console.log("true", index); //BORRAR
   }
 
   useEffect(() => {
@@ -47,9 +54,26 @@ export default function Reto1() {
     }
   }, [rightAnswers]);
 
+  useEffect(() => {
+    if (allTrue && !wrongAnswer) {
+      toast.success("¡Felicidades! Has pasado al Reto II", {
+        action: (
+          <Link href="/Reto2">
+            <button>Avanza al Reto II</button>
+          </Link>
+        ),
+      });
+    }
+  }, [allTrue, wrongAnswer]);
+
   return (
     <>
-      <Toaster position="bottom-center" closeButton visibleToasts={1} />
+      <Toaster
+        position="bottom-center"
+        closeButton
+        visibleToasts={1}
+        richColors
+      />
       <section className={styles.Reto1}>
         <h2>Reto I:</h2>
         <h3>
@@ -58,7 +82,7 @@ export default function Reto1() {
           salvarse"
         </h3>
         <p>
-          Aunque no parezca, uno de estos felinos es aliado de the_Undefined 😱
+          Uno de estos felinos es un aliado de the_Undefined, disfrazado de michi 😱
         </p>
         <p>
           Tres gatitos dicen algo cierto, uno te dice algo falso ¿puedes
@@ -72,32 +96,40 @@ export default function Reto1() {
 
         <p>
           {" "}
-          Si haces click sobre el gatito que miente, tendrás que volver a
+          Si haces click sobre el gatito que miente, verás al temible aliado y tendrás que volver a
           empezar 👿
         </p>
 
         <section className={styles.michisGrid}>
-          <div className={styles.michi1} data-index="0" onClick={handleAllCool}>
+          <div
+            className={styles.michi1}
+            data-index="0"
+            onClick={handleRespuestasCorrectas}
+          >
             <img
               src={rightAnswers[0] === null ? gato1 : correcto}
               alt="lindo y tierno gato"
             />
-            <p>console.log(typeof ([] + []) === "string");</p>
+            <p>console.log(typeof ([ ] + [ ]) === "string");</p>
           </div>
 
           <div
             className={styles.michi2}
             data-index="3"
-            onClick={handleConvertToZombie}
+            onClick={handleRespuestaIncorrecta}
           >
             <img
-              src={!gato2ZombieState ? gato2 : gato2Malo}
+              src={!gato2ZombieState ? gato2 : promptedImg} //ACÁ!!!!!!
               alt="linda y tierna gata"
             />
             <p>console.log("false" == false);</p>
           </div>
 
-          <div className={styles.michi3} data-index="1" onClick={handleAllCool}>
+          <div
+            className={styles.michi3}
+            data-index="1"
+            onClick={handleRespuestasCorrectas}
+          >
             <img
               src={rightAnswers[1] === null ? gato3 : correcto}
               alt="un buen y lindo gato rojizo"
@@ -105,7 +137,11 @@ export default function Reto1() {
             <p>console.log(typeof null === "object");</p>
           </div>
 
-          <div className={styles.michi4} data-index="2" onClick={handleAllCool}>
+          <div
+            className={styles.michi4}
+            data-index="2"
+            onClick={handleRespuestasCorrectas}
+          >
             <img
               src={rightAnswers[2] === null ? midumichi : correcto}
               alt="el famoso Midumichi"
@@ -113,12 +149,6 @@ export default function Reto1() {
             <p>console.log(typeof NaN === "number");</p>
           </div>
         </section>
-
-        {allTrue && !wrongAnswer && (
-          <Link href="/Reto2">
-            <button>Avanza al Reto II</button>
-          </Link>
-        )}
       </section>
     </>
   );

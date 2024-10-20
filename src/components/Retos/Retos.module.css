@@ -1,3 +1,4 @@
+/* Reto I */
 .Reto1 {
   margin: 0 auto;
   display: flex;
@@ -41,6 +42,139 @@
 
     & .michi4 {
       grid-area: 2/2/3/3;
+    }
+  }
+}
+
+/* Reto II */
+.Reto2 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & .miniZombie {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  & .camino {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    & .paso {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+
+      & p {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/* Reto III */
+.Reto3 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & .retoCodigo {
+    text-align: left;
+
+    & .espacioBlanco {
+      color: white;
+    }
+  }
+}
+
+.none {
+  display: none;
+}
+
+.demonioVisible {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0 auto;
+  margin: 0 auto;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Reto Final */
+.RetoFinal {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & h3 {
+    text-align: left;
+  }
+
+  & .temporizador {
+    margin: 0 auto;
+    width: 50%;
+    height: 4rem;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+  }
+
+  .bucles {
+    text-align: left;
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+    & .bucle1,
+    .bucle2 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    & .completar {
+      border: 1px solid red;
     }
   }
 }

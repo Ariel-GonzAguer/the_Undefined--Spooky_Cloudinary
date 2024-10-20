@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 
+// components
+import { Toaster, toast } from "sonner";
+
 export default function UploadWidget({ onUpload }) {
   const cloudinaryRef = useRef();
   const widgetRef = useRef();
@@ -13,8 +16,10 @@ export default function UploadWidget({ onUpload }) {
       },
       function (error, result) {
         if (error) {
-          console.error("Error al subir imagen. Inténtalo de nuevo", error); // BORRAR AL FINAL
-          alert("Error al subir imagen. Inténtalo de nuevo", error);
+          console.error("Error al subir imagen.", error); // BORRAR AL FINAL
+          toast.error("Error al subir imagen. Inténtalo de nuevo", {
+            duration: 6666,
+          });
           onUpload({ success: false, error });
           return;
         } else if (result.event === "success") {
@@ -26,8 +31,11 @@ export default function UploadWidget({ onUpload }) {
   }, [onUpload]);
 
   return (
-    <div>
-      <button onClick={() => widgetRef.current.open()}>Upload</button>
-    </div>
+    <>
+      <Toaster position="bottom-center" closeButton visibleToasts={1} richColors />
+      <div>
+        <button onClick={() => widgetRef.current.open()}>Upload</button>
+      </div>
+    </>
   );
 }

@@ -23,11 +23,11 @@ In addition, AI was used to modify an image that can be shown in Challenge 1, ac
 
 - 🌟 Cloudinary: IA generativa 🌟
 - CSS loader: [CSS Loaders](https://css-loaders.com/progress/)
-- Jest: Testing.
+- Jest: Testing. ***PENDIENTE***
 - React: UI Framework.
 - Sonner: Componente UI.
 - Vite: Herramienta de compilación y desarrollo.
-- Vitest: Testing.
+- Vitest: Testing. ***PENDIENTE***
 - Wouter: Enrutado.
 - Zustand: Manejo de estado global.
 
