@@ -112,7 +112,7 @@ export default function SeleccionarFotos() {
         console.error("Error applying effect:", err);
       }
     }
-  }, [uploadResultInfierno]);
+  }, [uploadResultGato]);
 
   // zombie
   const [uploadResultZombie, setUploadResultZombie] = useState(null);
@@ -186,7 +186,7 @@ export default function SeleccionarFotos() {
               style={{ display: imageReadyDemonio ? "block" : "none" }} // Mostrar solo cuando esté lista
             />
           )}
-          {!imageLoadedGatoemonio && (
+          {!imageLoadedDemonio && (
             <>
               <p>Ejemplo</p>
               <img
