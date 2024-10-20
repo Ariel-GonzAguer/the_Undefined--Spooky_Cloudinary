@@ -75,8 +75,8 @@ export default function SeleccionarFotos() {
       try {
         const imgCalavera = cld
           .image(uploadResultCalavera.info.public_id)
-          .effect(generativeReplace().from("face").to("skull from hell")) // CAMBIAR
-          .resize(scale().width(500));
+          .effect(generativeReplace().from("face").to("creepy monster")) // CAMBIAR?
+          .resize(scale().width(400));
         setImageLoadedCalavera(imgCalavera);
         setImageReadyCalavera(false);
         setSpookyImages((prev) => ({ ...prev, calavera: imgCalavera.toURL() }));
@@ -99,10 +99,10 @@ export default function SeleccionarFotos() {
           .image(uploadResultInfierno.info.public_id)
           .effect(
             generativeBackgroundReplace().prompt(
-              "hell"
+              "diabolic spiders and rats"
             )
           ) // CAMBIAR
-          .resize(scale().width(500));
+          .resize(scale().width(400));
         setImageLoadedInfierno(imgInfierno);
         setImageReadyInfierno(false);
         setSpookyImages((prev) => ({
