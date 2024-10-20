@@ -56,7 +56,7 @@ export default function SeleccionarFotos() {
         const imgPrompted = cld
           .image("october/pirataIA_NOBORRAR")
           .effect(generativeReplace().from("person").to(spookyPrompt))
-          .resize(scale().width(300));
+          .resize(scale().width(500));
         setSpookyImages((prev) => ({ ...prev, prompted: imgPrompted.toURL() }));
         console.log("prompted img:", imgPrompted.toURL());
       } catch (err) {
@@ -76,7 +76,7 @@ export default function SeleccionarFotos() {
         const imgCalavera = cld
           .image(uploadResultCalavera.info.public_id)
           .effect(generativeReplace().from("face").to("skull from hell")) // CAMBIAR
-          .resize(scale().width(300));
+          .resize(scale().width(500));
         setImageLoadedCalavera(imgCalavera);
         setImageReadyCalavera(false);
         setSpookyImages((prev) => ({ ...prev, calavera: imgCalavera.toURL() }));
@@ -102,7 +102,7 @@ export default function SeleccionarFotos() {
               "hell"
             )
           ) // CAMBIAR
-          .resize(scale().width(300));
+          .resize(scale().width(500));
         setImageLoadedInfierno(imgInfierno);
         setImageReadyInfierno(false);
         setSpookyImages((prev) => ({
@@ -127,7 +127,7 @@ export default function SeleccionarFotos() {
         const imgZombie = cld
           .image(uploadResultZombie.info.public_id)
           .effect(generativeReplace().from("person").to("demoniac zombie"))
-          .resize(scale().width(300));
+          .resize(scale().width(500));
         setImageLoadedZombie(imgZombie);
         setImageReadyZombie(false); // Reset imageReady to false while loading
         setSpookyImages((prev) => ({ ...prev, zombie: imgZombie.toURL() }));

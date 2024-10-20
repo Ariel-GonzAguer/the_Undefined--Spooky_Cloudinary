@@ -1,0 +1,46 @@
+.Reto1 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & .michisGrid {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 3rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .michi1 {
+      grid-area: 1/1/2/2;
+    }
+
+    & .michi2 {
+      grid-area: 1/2/2/3;
+    }
+
+    & .michi3 {
+      grid-area: 2/1/3/2;
+    }
+
+    & .michi4 {
+      grid-area: 2/2/3/3;
+    }
+  }
+}

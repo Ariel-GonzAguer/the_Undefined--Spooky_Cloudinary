@@ -9,10 +9,20 @@ La persona usuaria debe pasar tres retos relacionados con programación, para ll
 La IA de Cloudinary se usa en este proyecto para convertir tres fotos que la persona usuaria sube a la plataforma, más un prompt también elegido por la persona usuaria, que cambiará una foto ya almacenada en la plataforma de Cloudinary.\
 Además, la IA se usó para modificar una imagen que se puede mostrar en el Reto 1, según las elecciones de la persona usuaria.
 
+***English (only this part of the Readme is translated 😊)***
+This project was made specifically to participate in the Cloudinary Spooky AI Hackathon + MiduDev.
+
+It's a game in which you have to defeat the_Undefined, an entity that wants to be the result of all functions from now on... yes, terrifying 😨😱
+
+The user must pass three programming-related challenges to reach the final challenge against the_Undefined.
+
+Cloudinary's AI is used in this project to convert three photos that the user uploads to the platform, plus a prompt also chosen by the user, which will change a photo already stored on the Cloudinary platform.
+In addition, AI was used to modify an image that can be shown in Challenge 1, according to the user's choices.
+
 ## Tech Stack
 
-- 🌟 Cloudinary: IA generativa.
-- CSS loaders: [CSS Loaders](https://css-loaders.com/progress/)
+- 🌟 Cloudinary: IA generativa 🌟
+- CSS loader: [CSS Loaders](https://css-loaders.com/progress/)
 - Jest: Testing.
 - React: UI Framework.
 - Sonner: Componente UI.
