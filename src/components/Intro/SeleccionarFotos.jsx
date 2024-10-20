@@ -163,12 +163,11 @@ export default function SeleccionarFotos() {
 
       <section className={styles.FotosContainer}>
         <section>
-          <h3>Calavera</h3>
-          <p>Selecciona una imagen dónde se muestre un rostro</p>
+          <h3>Demonio</h3>
           <UploadWidget
             onUpload={(result) => setUploadResultCalavera(result)}
           />
-          {imageLoadedZombie && !imageReadyZombie && (
+          {imageLoadedCalavera && !imageReadyCalavera && (
             <div className={styles.loaderSkull}></div>
           )}
           {imageLoadedCalavera && (
@@ -201,7 +200,6 @@ export default function SeleccionarFotos() {
 
         <section>
           <h3>Infernal</h3>
-          <p>Selecciona una imagen con un fondo visible y amplio</p>
           <UploadWidget
             onUpload={(result) => setUploadResultInfierno(result)}
           />
@@ -238,7 +236,6 @@ export default function SeleccionarFotos() {
 
         <section>
           <h3>Zombie</h3>
-          <p>Selecciona una imagen dónde se muestre una persona</p>
           <UploadWidget onUpload={(result) => setUploadResultZombie(result)} />
           {imageLoadedZombie && !imageReadyZombie && (
             <div className={styles.loaderSkull}></div>
@@ -265,7 +262,7 @@ export default function SeleccionarFotos() {
               <img
                 src={smile}
                 alt="Una persona sonriendo, con un fondo de un bosque de pinos"
-                className={styles.imgDeEjemplo}
+ className={styles.imgDeEjemplo}
               />
             </>
           )}
