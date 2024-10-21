@@ -41,7 +41,7 @@ export default function Intro() {
           Es 31 de octubre del 2024...
           <br />
           De entre las nubes, algo, un mostruo, una entidad desconocida, llamada{" "}
-          <span className={`${styles.flicker}`}>the_Undefined</span>, ha llegado
+          <span className={`${styles.flickerDos}`}>the_Undefined</span>, ha llegado
           con terribles planes para el mundo de la programación.
           <br />
           Su objetivo principal es ser el resultado de todas las funciones a partir
@@ -52,11 +52,11 @@ export default function Intro() {
           <br />
           <br />
           Vence a los aliados de{" "}
-          <span className={`${styles.flicker}`}>the_Undefined</span>,
+          <span className={`${styles.blinkDos}`}>the_Undefined</span>,
           resolviendo tres retos relacionados con la programación para
           enfrentarte a él.
           <br />
-          Derrota a <span className={`${styles.flicker}`}>the_Undefined</span> y
+          Derrota a <span className={`${styles.flickerCinco}`}>the_Undefined</span> y
           salva al mundo (de la programación), o huye ahora...
         </p>
 
