@@ -16,7 +16,8 @@ export default function Reto3() {
   // esados para el reto
   const [error, setError] = useState(false);
   const [respuestasCorrectas, setRespuestasCorrectas] = useState(0);
-
+  const [respuestasSeleccionadas, setRespuestasSeleccionadas] = useState(new Set());
+  
   // demonio de zustand
   const { spookyImagesInStore } = useMonsterStore((state) => state);
   const demonio = spookyImagesInStore.demonio;
@@ -29,12 +30,15 @@ export default function Reto3() {
     });
   }
 
-  function respuestaCorrecta() {
-    setRespuestasCorrectas(respuestasCorrectas + 1);
-    if (respuestasCorrectas < 6) {
-      toast.success(`¡Respuesta correcta! faltan ${5 - respuestasCorrectas}`, {
-        duration: 6666,
-      });
+  function respuestaCorrecta(index) {
+    if (!respuestasSeleccionadas.has(index)) {
+      setRespuestasSeleccionadas(new Set(respuestasSeleccionadas).add(index));
+      setRespuestasCorrectas(respuestasCorrectas + 1);
+      if (respuestasCorrectas < 6) {
+        toast.success(`¡Respuesta correcta! faltan ${5 - respuestasCorrectas}`, {
+          duration: 6666,
+        });
+      }
     }
   }
 
@@ -88,7 +92,7 @@ export default function Reto3() {
 
         <section className={styles.retoCodigo}>
           <p onClick={respuestaErronea}>function alimentar(nombre) {"{"}</p>
-          <p onClick={respuestaCorrecta}>
+          <p onClick={() => respuestaCorrecta(1)}>
             <span className={styles.noSpan}>&nbsp;</span>if (nombre = 'Gatanás') {"{"}
           </p>{" "}
           {/* Error de sintaxis */}
@@ -99,7 +103,7 @@ export default function Reto3() {
             <span className={styles.noSpan}>&nbsp;&nbsp;</span>
             {"}"} else {"{"}{" "}
           </p>
-          <p onClick={respuestaCorrecta}>
+          <p onClick={() => respuestaCorrecta(2)}>
             <span className={styles.noSpan}>&nbsp;&nbsp;</span>console.log( 'Hola', nombre.toUppercase());
           </p>
           {/* Error de sintaxis */}
@@ -111,7 +115,7 @@ export default function Reto3() {
           <p onClick={respuestaErronea}>
             <span className={styles.noSpan}>&nbsp;</span>const edad = 25;
           </p>
-          <p onClick={respuestaCorrecta}>
+          <p onClick={() =>respuestaCorrecta(3)}>
             <span className={styles.noSpan}>&nbsp;</span>edad = 66.6;
           </p>
           {/* Error de sintaxis */}
@@ -120,7 +124,7 @@ export default function Reto3() {
             <span className={styles.noSpan}>&nbsp;</span>let arrayDeDemonios = ['Gatbaddón', 'Miaulzebú',
             'Catsmoteo'];
           </p>
-          <p onClick={respuestaCorrecta}>
+          <p onClick={() =>respuestaCorrecta(4)}>
             <span className={styles.noSpan}>&nbsp;</span>for (let i; i {"<"} arrayDeDemonios.length; i++){" "}
             {"{"}
           </p>
@@ -138,7 +142,7 @@ export default function Reto3() {
             <span className={styles.noSpan}>&nbsp;&nbsp;</span>let ganarHackaton = 'Ganar Cloudinary
             Hackaton ';
           </p>
-          <p onClick={respuestaCorrecta}>
+          <p onClick={() => respuestaCorrecta(5)}>
             <span className={styles.noSpan}>&nbsp;&nbsp;</span>
             console.log( ganarHackaton('yo, true'));
           </p>
@@ -152,7 +156,7 @@ export default function Reto3() {
             {"}"}
           </p>
           <p>{""}</p>
-          <p onClick={respuestaCorrecta}>alimentar('Sundae'{"}"};</p>
+          <p onClick={() => respuestaCorrecta(6)}>alimentar('Sundae'{"}"};</p>
           {/* Error de sintaxis */}
           <p>{""}</p>
         </section>
