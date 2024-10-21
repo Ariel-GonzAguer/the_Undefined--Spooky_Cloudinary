@@ -194,11 +194,13 @@ export default function SeleccionarFotos() {
         richColors
       />
       <section className={styles.SeleccionarFotos}>
-        <h2>
-          Has decidido enfentrar a
-          <br />
-          the_Undefined
-        </h2>
+        <section>
+          <h2>
+            Has decidido enfentrar a
+            <br />
+            the_Undefined
+          </h2>
+        </section>
         <p>
           Para empezar con los retos debes seleccionar tres imagenes y elegir
           una de las opciones de texto. Esta información será usada de manera
@@ -234,7 +236,6 @@ export default function SeleccionarFotos() {
             )}
             {!imageLoadedDemonio && (
               <>
-                <p>Ejemplo</p>
                 <img
                   src={medioCuerpo}
                   alt="Una persona pensando en cómo vencer a the_Undefined, o en qué comer después de la batalla, tal vez."
@@ -245,7 +246,7 @@ export default function SeleccionarFotos() {
           </section>
 
           <section>
-            <h3>Convierte a tu gato en un monstruo</h3>
+            <h3>Convierte tu gato en monstruo</h3>
             <UploadWidget onUpload={(result) => setUploadResultGato(result)} />
             {imageLoadedGato && !imageReadyGato && (
               <div className={styles.loaderSkull}></div>
@@ -269,7 +270,6 @@ export default function SeleccionarFotos() {
             )}
             {!imageLoadedGato && (
               <>
-                <p>Ejemplo</p>
                 <img
                   src={Sundae}
                   alt="Un hermoso gato llamado Sundae de Caramelo, con un fonde de un patio común de Costa Rica, lleno de verde"
@@ -306,7 +306,6 @@ export default function SeleccionarFotos() {
             )}
             {!imageLoadedZombie && (
               <>
-                <p>Ejemplo</p>
                 <img
                   src={smile}
                   alt="Una persona sonriendo, con un fondo de un bosque de pinos"
@@ -319,7 +318,7 @@ export default function SeleccionarFotos() {
 
         <section className={styles.SpookyPrompt}>
           <label> Selecciona una opción:</label>
-          <select name="spookyPrompt" onChange={handleChangePrompt}>
+          <select name="spookyPrompt" onChange={handleChangePrompt} className={styles.select}>
             <option value="scary straw man">Hombre de paja</option>
             <option value="crazy doctor eating blood without eyes">
               Dentista
@@ -329,10 +328,10 @@ export default function SeleccionarFotos() {
         </section>
 
         <Link href={isReadyToProceed ? "/Reto1" : "#"}>
-        <button onClick={handleComenzarRetos} disabled={!isReadyToProceed}>
-          Comenzar
-        </button>
-      </Link>
+          <button onClick={handleComenzarRetos} disabled={!isReadyToProceed} className={styles.comenzar}>
+            Comenzar
+          </button>
+        </Link>
       </section>
     </>
   );

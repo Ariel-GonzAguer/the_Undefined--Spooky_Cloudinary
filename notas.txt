@@ -1,0 +1,11 @@
+gengar color pallete
+
+gris medio oscuro: #6a627b
+morado vino: #4a294a
+blanco medio lila: #fff6ff
+morado: #5a4a9c
+morado claro: #7b62a4
+morado más claro: #9473b4
+papaya: #ff9494
+rojo suave: #ff5a5a
+morado gengar: #b48bbd

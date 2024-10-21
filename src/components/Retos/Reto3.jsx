@@ -69,7 +69,7 @@ export default function Reto3() {
           !error && respuestasCorrectas <= 6 ? styles.Reto3 : styles.none
         }
       >
-        <h2>Reto 3:</h2>
+        <h2 className={styles.textoFantasma}>Reto 3</h2>
         <h3>Syntax error</h3>
         <p>
           Tu versión zombie no fue lo suficientemente veloz, tal vez si puedas
@@ -89,71 +89,66 @@ export default function Reto3() {
         <section className={styles.retoCodigo}>
           <p onClick={respuestaErronea}>function alimentar(nombre) {"{"}</p>
           <p onClick={respuestaCorrecta}>
-            <span className={styles.espacioBlanco}>_</span>if (nombre =
-            'Gatanás') {"{"}
+            <span className={styles.noSpan}>&nbsp;</span>if (nombre = 'Gatanás') {"{"}
           </p>{" "}
           {/* Error de sintaxis */}
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>__</span>console.log('Come,
-            Gatanás :3');
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>console.log( 'Come, Gatanás :3');
           </p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>_</span>
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>
             {"}"} else {"{"}{" "}
           </p>
           <p onClick={respuestaCorrecta}>
-            <span className={styles.espacioBlanco}>__</span>console.log('Hola',
-            nombre.toUppercase());
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>console.log( 'Hola', nombre.toUppercase());
           </p>
           {/* Error de sintaxis */}
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>_</span>
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>
             {"}"}
           </p>
           <p>{""}</p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>_</span>const edad = 25;
+            <span className={styles.noSpan}>&nbsp;</span>const edad = 25;
           </p>
           <p onClick={respuestaCorrecta}>
-            <span className={styles.espacioBlanco}>_</span>edad = 66.6; // Error
-            3
+            <span className={styles.noSpan}>&nbsp;</span>edad = 66.6;
           </p>
           {/* Error de sintaxis */}
           <p>{""}</p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>_</span>let arrayDeDemonios =
-            ['Gatbaddón', 'Miaulzebú', 'Catsmoteo'];
+            <span className={styles.noSpan}>&nbsp;</span>let arrayDeDemonios = ['Gatbaddón', 'Miaulzebú',
+            'Catsmoteo'];
           </p>
           <p onClick={respuestaCorrecta}>
-            <span className={styles.espacioBlanco}>__</span>for (let i; i {"<"}{" "}
-            arrayDeDemonios.length; i++) {"{"}
+            <span className={styles.noSpan}>&nbsp;</span>for (let i; i {"<"} arrayDeDemonios.length; i++){" "}
+            {"{"}
           </p>
           {/* Error de sintaxis */}
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>___</span>
-            console.log(arrayDeDemonios[i]);
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>
+            console.log( arrayDeDemonios[i]);
           </p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>__</span>
+            <span className={styles.noSpan}>&nbsp;&nbsp;&nbsp;</span>
             {"}"}
           </p>
           <p>{""}</p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>_</span>let ganarHackaton =
-            'Haz ganado la Cloudinary Hackaton ';
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>let ganarHackaton = 'Ganar Cloudinary
+            Hackaton ';
           </p>
           <p onClick={respuestaCorrecta}>
-            <span className={styles.espacioBlanco}>_</span>
-            console.log(ganarHackaton('yo, true'));
+            <span className={styles.noSpan}>&nbsp;&nbsp;</span>
+            console.log( ganarHackaton('yo, true'));
           </p>
           {/* Error de sintaxis */}
           <p>{""}</p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>__</span>return
-            ganarHackaton;
+            <span className={styles.noSpan}>&nbsp;&nbsp;&nbsp;</span>return ganarHackaton;
           </p>
           <p onClick={respuestaErronea}>
-            <span className={styles.espacioBlanco}>_</span>
+            <span className={styles.noSpan}>&nbsp;</span>
             {"}"}
           </p>
           <p>{""}</p>

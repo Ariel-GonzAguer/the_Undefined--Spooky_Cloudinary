@@ -5,13 +5,111 @@
   gap: 1rem;
   text-align: center;
   height: 100%;
+  padding: 0 3rem;
+
+  & h2 {
+    font-size: 2.5rem;
+    margin: 2rem auto 3rem;
+    line-height: 3.5rem;
+  }
+
+  & p {
+    line-height: 2rem;
+  }
+
+  & .FotosContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 90%;
+    max-width: 1000px;
+
+    & section {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      min-width: 250px;
+
+      & img {
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+        border: 6px solid #ff5a5a;
+      }
+    }
+
+    & button {
+      width: 100px;
+      height: 50px;
+      margin: 1rem;
+      font-size: 1.5rem;
+      background-color: #6a627b;
+      color: #fff6ff;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #4a294a;
+        color: #ff9494;
+      }
+    }
+  }
+
+  .comenzar {
+    width: 150px;
+    height: 50px;
+    margin: 1rem;
+    font-size: 1.5rem;
+    background-color: #6a627b;
+    color: #fff6ff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4a294a;
+      color: #ff9494;
+    }
+  }
+
+  .SpookyPrompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .imgDeEjemplo {
+    width: 300px;
+  }
+}
+
+& .select {
+  background-color: #6a627b;
+  color: #fff6ff;
+  cursor: pointer;
+  width: auto;
+  height: 2rem;
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+  border: 6px solid #4a294a;
+
+  &:hover {
+    background-color: #4a294a;
+    color: #ff9494;
+  }
 }
 
 /* loader */
 /* HTML: <div class="loaderSkull"></div> */
 .loaderSkull {
   margin: 2rem auto;
-  width: 60px;
+  width: 160px;
   aspect-ratio: 1;
   background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
   -webkit-mask: url("/public/imgs/skull-clipart-loader.svg") center/contain
@@ -26,43 +124,15 @@
   }
 }
 
-.FotosContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-top: 1rem;
-  width: 90%;
-  max-width: 1000px;
+@media only screen and (max-width: 450px) {
+  .SeleccionarFotos {
+    & h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
 
-  & section {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    min-width: 250px;
-
-
-    & img {
-      width: 100%;
-      object-fit: cover;
-      height: 300px;
+    & p {
+      width: 100vw;
     }
   }
-}
-
-.SpookyPrompt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
-}
-
-.imgDeEjemplo {
-  width: 300px;
 }

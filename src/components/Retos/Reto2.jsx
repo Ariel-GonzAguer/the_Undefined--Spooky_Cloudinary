@@ -94,7 +94,7 @@ export default function Reto2() {
         richColors
       />
       <section className={styles.Reto2}>
-        <h2>Reto 2:</h2>
+        <h2>Reto 2</h2>
         <h3> let suerte = Math.floor( Math.random( ) )</h3>
         <p>
           ¿Lograste descubrir al michi falso por suerte, o realmente sabías la
@@ -104,12 +104,13 @@ export default function Reto2() {
         <p>
           {" "}
           Si solo fue suerte, esperemos siga así, pues en este Reto la
-          necesitarás, y el Midugato está en juego 😿
+          necesitarás, y el Midugato está en juego.
         </p>
         <p>
-          Deberás salvar a Luffy de tu versión zombie, pero tus
-          pasos son aleatorios y the_Undefined hace que el muerto viviente a
-          veces sea más rápido que tú.
+          Deberás salvar a Luffy de tu versión zombie, pero tus pasos son
+          aleatorios, el camino está lleno de calabazas temblorosas y
+          the_Undefined hace que el muerto viviente a veces sea más rápido que
+          tú.
         </p>
         <p>
           Si no logras llegar al final del camino antes que tu versión
@@ -120,7 +121,7 @@ export default function Reto2() {
 
         <section className={styles.camino}>
           {pasosArray.map((paso, index) => (
-            <div key={index} className={styles.paso}>
+            <div key={index} className={`${styles.paso} ${styles.vibrate}`}>
               {paso}
             </div>
           ))}

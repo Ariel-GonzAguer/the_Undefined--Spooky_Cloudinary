@@ -17,8 +17,8 @@ export default function RetoFinal() {
   const [bucleInfinito, setBucleInfinito] = useState(false);
   const [temporizador, setTemporizador] = useState(66);
   const [respuestas, setRespuestas] = useState({
-    respuesta1: `completar`,
-    respuesta2: `completar`,
+    respuesta1: `undefined`,
+    respuesta2: `undefined`,
   });
 
   // zustand
@@ -119,36 +119,38 @@ export default function RetoFinal() {
           fontSize: "4rem",
         }}
       >
-        <p>the_Undefined ha ganado...</p>
+        {bucleInfinito &&
+          toast.error("Bucle infinito activado. the_Undefined ha vencido...", {
+            duration: 6666,
+          })}
       </div>
 
       <section className={!bucleInfinito ? styles.RetoFinal : styles.none}>
         <h2>Reto Final</h2>
-        <h3>
-          if (bucleInfinito === true) {"{"} <br />
-          <span>&nbsp;&nbsp;</span>let michi = "versión macabra";
-          <br />
-          <span>&nbsp;&nbsp;&nbsp;</span>return the_Undefined;
-          <br />
-          <span>&nbsp;&nbsp;</span>
-          {"}"} else {"{"}
-          <br />
-          <span>&nbsp;&nbsp;&nbsp;</span>return "¡Haz salvado al mundo!";
-          <br />
-          <span>&nbsp;&nbsp;</span>
-          {"}"}
-          <br />
-          {"}"}
-        </h3>
-        <section className={styles.temporizador}>
-          <p>Te quedan: {temporizador} segundos para salvar a tu michi 😱</p>
-        </section>
+        <div>
+          <h3>
+            if (bucleInfinito === true) {"{"} <br />
+            <span>&nbsp;&nbsp;</span>let michi = "versión macabra";
+            <br />
+            <span>&nbsp;&nbsp;&nbsp;</span>return the_Undefined;
+            <br />
+            <span>&nbsp;&nbsp;</span>
+            {"}"} else {"{"}
+            <br />
+            <span>&nbsp;&nbsp;&nbsp;</span>return "¡Haz salvado al mundo!";
+            <br />
+            <span>&nbsp;&nbsp;</span>
+            {"}"}
+            <br />
+            {"}"};
+          </h3>
+        </div>
 
         <p>Felicidades, haz llegado al reto final.</p>
         <p>
           Este reto tiene doble propósito: salvar al mundo y evitar que
           the_Undefined convierta a tu gato en un mostruo animal que se olvidará
-          de ti 😔 ¡y se te acaba el tiempo!
+          de ti ¡Se te acaba el tiempo!
         </p>
         <p>
           Los códigos en esta página tienen los elementos necesarios para crear
@@ -159,11 +161,27 @@ export default function RetoFinal() {
           Si te equivocas, the_Undefined tomará al mundo, tu amigo gatuno no
           será el mismo, y será el fin de la programación.
         </p>
-
         <p>
-          Acá está tu gatito para recordarte que no tienes tiempo que perder
+          Al lado del temporizador está tu gatito para recordarte que no tienes
+          tiempo que perder
         </p>
-        <img src={gatoOriginal} alt="Gato" />
+
+        <div className={styles.temporizadorYMichi}>
+          <section className={styles.temporizador}>
+            <p className={styles.heartbeat}>
+              Te quedan <br />
+              <span>{temporizador}</span>
+              <br /> segundos para salvar a tu michi
+            </p>
+          </section>
+          <section className={styles.tuMichi}>
+            <img
+              src={gatoOriginal}
+              alt="Gato"
+              className={styles.gatoOriginal}
+            />
+          </section>
+        </div>
 
         <section className={styles.bucles}>
           <section className={styles.bucle1}>
@@ -176,9 +194,7 @@ export default function RetoFinal() {
               <span>&nbsp;&nbsp;&nbsp;</span>alert (cl);
               <br />
               <span>&nbsp;&nbsp;&nbsp;</span>
-              i--;
-              <br />
-              {"}"}
+              i--{"}"};
             </p>
             <label>
               Respuesta 1:
@@ -194,7 +210,6 @@ export default function RetoFinal() {
 
           <section className={styles.bucle2}>
             <p className={styles.codigoACorregir}>
-              let cl = 696; <br />
               do {"{"}
               <br />
               console.log(cl, 'the_Undefined vencerá');

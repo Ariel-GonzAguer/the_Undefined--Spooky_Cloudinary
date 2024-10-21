@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
+    format("truetype");
+  font-display: swap;
+  /*este atributo:valor aseguran que se muestre el texto mientras cargan las fuentes, de otra manera el texto aparece "invisible"*/
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Press Start 2P", monospace;
+  background-color: #b48bbd;
 }

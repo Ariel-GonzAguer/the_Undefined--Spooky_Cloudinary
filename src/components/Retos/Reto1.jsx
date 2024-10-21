@@ -75,14 +75,14 @@ export default function Reto1() {
         richColors
       />
       <section className={styles.Reto1}>
-        <h2>Reto I:</h2>
+        <h2>Reto I</h2>
         <h3>
           {" "}
           Michi === false ? "the_Undefined toma el mundo" : "El mundo aún puede
           salvarse"
         </h3>
         <p>
-          Uno de estos felinos es un aliado de the_Undefined, disfrazado de michi 😱
+          Uno de estos felinos es un aliado de the_Undefined, disfrazado de michi.
         </p>
         <p>
           Tres gatitos dicen algo cierto, uno te dice algo falso ¿puedes
@@ -97,7 +97,7 @@ export default function Reto1() {
         <p>
           {" "}
           Si haces click sobre el gatito que miente, verás al temible aliado y tendrás que volver a
-          empezar 👿
+          empezar.
         </p>
 
         <section className={styles.michisGrid}>

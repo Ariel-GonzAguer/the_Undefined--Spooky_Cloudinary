@@ -15,7 +15,7 @@ export default function Intro() {
     if (value === "entrar") {
       console.log("seleccion ->", seleccion); // BORRAR AL FINAL
     } else if (value === "huir") {
-      toast(`Ahora pueded cerrar la ventana o refrescarla para volver.`, {
+      toast(`Ahora puedes cerrar la ventana o refrescarla para volver.`, {
         duration: 6666,
       });
     }
@@ -33,21 +33,44 @@ export default function Intro() {
             : " "
         }`}
       >
-        <h1>the_Undefined</h1>
+        <div className={styles.divH1}>
+          <h1 className={`${styles.flicker}`}>the_Undefined</h1>
+        </div>
+
         <p>
-          Acepta el reto de derrotar a the_Undefined y salva al mundo (de la
-          programación) o huye ahora...
+          Es 31 de octubre del 2024...
+          <br />
+          De entre las nubes, algo, un mostruo, una entidad desconocida, llamada{" "}
+          <span className={`${styles.flicker}`}>the_Undefined</span>, ha llegado
+          con terribles planes para el mundo de la programación.
+          <br />
+          Su objetivo principal es ser el resultado de todas las funciones a partir
+          de ahora.
+          <br />
+          <br />
+          ¡Noooooooo!
+          <br />
+          <br />
+          Vence a los aliados de{" "}
+          <span className={`${styles.flicker}`}>the_Undefined</span>,
+          resolviendo tres retos relacionados con la programación para
+          enfrentarte a él.
+          <br />
+          Derrota a <span className={`${styles.flicker}`}>the_Undefined</span> y
+          salva al mundo (de la programación), o huye ahora...
         </p>
 
-        <Link href="/SeleccionarFotos">
-          <button value="entrar" onClick={handleSeleccion}>
-            Entrar
-          </button>
-        </Link>
+        <section className={styles.buttonsContainer}>
+          <Link href="/SeleccionarFotos">
+            <button value="entrar" onClick={handleSeleccion}>
+              Entrar
+            </button>
+          </Link>
 
-        <button value="huir" onClick={handleSeleccion}>
-          Huir
-        </button>
+          <button value="huir" onClick={handleSeleccion}>
+            Huir
+          </button>
+        </section>
       </section>
     </>
   );
