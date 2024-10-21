@@ -505,7 +505,7 @@
     }
 
     & .completar {
-      color: #ff9494;
+      color: red;
     }
   }
 }
