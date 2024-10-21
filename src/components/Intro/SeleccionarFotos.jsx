@@ -329,7 +329,7 @@ export default function SeleccionarFotos() {
 
         <Link href={isReadyToProceed ? "/Reto1" : "#"}>
           <button onClick={handleComenzarRetos} disabled={!isReadyToProceed} className={styles.comenzar}>
-            Comenzar
+            { isReadyToProceed ? "Comenzar" : "Aún no puedes comenzar" } 
           </button>
         </Link>
       </section>
