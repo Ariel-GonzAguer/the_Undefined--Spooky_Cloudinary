@@ -70,6 +70,10 @@
     color: #fff6ff;
     cursor: pointer;
 
+    &:disabled {
+      height: 100px;
+      width: 200px;
+
     &:hover {
       background-color: #4a294a;
       color: #ff9494;
