@@ -321,9 +321,9 @@ export default function SeleccionarFotos() {
           <select name="spookyPrompt" onChange={handleChangePrompt} className={styles.select}>
             <option value="scary straw man">Hombre de paja</option>
             <option value="crazy doctor eating blood without eyes">
-              Dentista
+              Doctor Macabro
             </option>
-            <option value="demon from hell with computer">Programador</option>
+            <option value="demon from hell with computer">Angel caído</option>
           </select>
         </section>
 
