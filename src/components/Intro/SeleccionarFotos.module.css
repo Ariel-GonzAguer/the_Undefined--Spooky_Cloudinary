@@ -73,6 +73,7 @@
     &:disabled {
       height: 100px;
       width: 200px;
+    }
 
     &:hover {
       background-color: #4a294a;
