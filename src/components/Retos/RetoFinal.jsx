@@ -126,7 +126,7 @@ export default function RetoFinal() {
       </div>
 
       <section className={!bucleInfinito ? styles.RetoFinal : styles.none}>
-        <h2>Reto Final</h2>
+        <h2 className={styles.flicker}>Reto Final</h2>
         <div>
           <h3>
             if (bucleInfinito === true) {"{"} <br />
@@ -148,17 +148,14 @@ export default function RetoFinal() {
 
         <p>Felicidades, haz llegado al reto final.</p>
         <p>
-          Este reto tiene doble propósito: salvar al mundo y evitar que
-          the_Undefined convierta a tu gato en un mostruo animal que se olvidará
-          de ti ¡Se te acaba el tiempo!
+          Este reto tiene doble propósito: salvar al mundo y evitar que tu gato se convierta en un mostruo animal que se olvidará de ti ¡Se te acaba el tiempo!
         </p>
         <p>
-          Los códigos en esta página tienen los elementos necesarios para crear
-          un bucle infinito. Completa ambos códigos de forma correcta antes de
+          Cada código en esta página tiene la capacidad de crear un bucle infinito. Completa ambos códigos de forma correcta antes de
           que el temporizador llegue a 0.
         </p>
         <p>
-          Si te equivocas, the_Undefined tomará al mundo, tu amigo gatuno no
+          Si te equivocas, <span className={styles.flickerDos}>the_Undefined</span>{" "} tomará al mundo, tu amigo gatuno no
           será el mismo, y será el fin de la programación.
         </p>
         <p>
