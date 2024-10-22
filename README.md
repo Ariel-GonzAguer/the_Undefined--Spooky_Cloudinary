@@ -8,7 +8,7 @@ La persona usuaria debe pasar tres retos relacionados con programación, para ll
 
 La IA de Cloudinary se usa en este proyecto para convertir tres fotos que la persona usuaria sube a la plataforma, más un prompt también elegido por la persona usuaria, que cambiará una foto ya almacenada en la plataforma de Cloudinary.\
 
-***English (only this part of the Readme is translated 😊)***
+***English (only this part of the Readme is translated 😊)***\
 This project was made specifically to participate in the Cloudinary Spooky AI Hackathon + MiduDev.
 
 It's a game in which you have to defeat the_Undefined, an entity that wants to be the result of all functions from now on... yes, terrifying 😨😱
