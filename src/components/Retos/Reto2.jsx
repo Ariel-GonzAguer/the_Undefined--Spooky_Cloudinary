@@ -85,7 +85,9 @@ export default function Reto2() {
       toast.error(
         "Se acabó... tu versión zombie te ha comido... Reinicia la página para volver a intentarlo",
         {
-          duration: 6666,
+           action: (
+        <button style={{width: "100px"}} onClick={() => window.location.reload()}>Refrescar</button>
+      )
         }
       );
     }
