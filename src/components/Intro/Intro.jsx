@@ -56,8 +56,8 @@ export default function Intro() {
           resolviendo tres retos relacionados con la programación para
           enfrentarte a él.
           <br />
-          Derrota a <span className={`${styles.flickerCinco}`}>the_Undefined</span> y
-          salva al mundo (de la programación), o huye ahora...
+          Derrota a <span className={`${styles.flickerCinco}`}>the_Undefined</span>{" "}y
+          salva al mundo, o huye ahora...
         </p>
 
         <section className={styles.buttonsContainer}>
