@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 // estilos
 import styles from "./Retos.module.css";
+import stylesAnimaciones from "../Intro/Intro.module.css";
 
 // zustand
 import useMonsterStore from "../Zustand/monsterStore";
@@ -33,22 +34,27 @@ export default function Reto2() {
     return Math.floor(Math.random() * 3) + 1;
   }
 
+  function moverJugador() {
+    let nuevaPosicion = posicionJugador + getRandomNumber();
+    setPosicionJugador(nuevaPosicion);
+    console.log("jugador", nuevaPosicion); //BORRAR
+  }
+
+  function moverZombie() {
+    let nuevaPosicion = posicionZombie + getRandomNumber();
+    setPosicionZombie(nuevaPosicion);
+    console.log("zombie", nuevaPosicion); //BORRAR
+  }
+
   function handleTurno() {
-    if (!turnoZombie) {
-      let nuevaPosicion = posicionJugador + getRandomNumber();
-      setPosicionJugador(nuevaPosicion);
-      console.log("jugador", nuevaPosicion); //BORRAR
-      setTurnoZombie(true);
-    } else {
-      let nuevaPosicion = posicionZombie + getRandomNumber();
-      setPosicionZombie(nuevaPosicion);
-      console.log("zombie", nuevaPosicion); //BORRAR
-      setTurnoZombie(false);
-    }
+    moverJugador();
+    setTimeout(() => {
+      moverZombie();
+    }, 100); // Retraso de 1 segundo antes de mover al zombie
   }
 
   useEffect(() => {
-    const newPasosArray = new Array(26).fill("");
+    const newPasosArray = new Array(23).fill("");
     newPasosArray[posicionJugador] = (
       <img src={Luffy} alt="" className={styles.miniZombie} />
     );
@@ -59,7 +65,7 @@ export default function Reto2() {
   }, [posicionJugador, posicionZombie]);
 
   useEffect(() => {
-    if (posicionJugador >= 26) {
+    if (posicionJugador >= 23) {
       toast.success(
         "¡Lograsta huir de tu versión zombie! ¡El mundo aún tiene esperanza! Avanza al Reto III",
         {
@@ -75,7 +81,7 @@ export default function Reto2() {
   }, [posicionJugador]);
 
   useEffect(() => {
-    if (posicionZombie >= 26 || posicionZombie >= posicionJugador) {
+    if (posicionZombie >= 23 || posicionZombie >= posicionJugador) {
       toast.error(
         "Se acabó... tu versión zombie te ha comido... Reinicia la página para volver a intentarlo",
         {
@@ -84,6 +90,11 @@ export default function Reto2() {
       );
     }
   }, [posicionZombie]);
+
+  // efecto para que la ventana se desplace al inicio al cargar el componente en dispositivos móviles
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -108,15 +119,15 @@ export default function Reto2() {
         </p>
         <p>
           Deberás salvar a Luffy de tu versión zombie, pero tus pasos son
-          aleatorios, el camino está lleno de calabazas temblorosas y
-          the_Undefined hace que el muerto viviente a veces sea más rápido que
-          tú.
+          aleatorios, el camino está lleno de calabazas temblorosas y el muerto
+          viviente a veces es más rápido que tú.
         </p>
         <p>
           Si no logras llegar al final del camino antes que tu versión
-          terrorífica y zómbica, no hay futuro para la programación y
-          the_Undefined tendrá al pequeño Luffy dentro de su scope. Tienes
-          varios pasos de ventaja, pero ¿será eso suficiente?
+          terrorífica y zómbica, no hay futuro para la programación y{" "}
+          <span className={stylesAnimaciones.flicker}>the_Undefined</span>{" "}
+          tendrá al pequeño Luffy dentro de su scope. Tienes varios pasos de
+          ventaja, pero ¿será eso suficiente?
         </p>
 
         <section className={styles.camino}>
@@ -128,9 +139,7 @@ export default function Reto2() {
         </section>
 
         {posicionJugador > posicionZombie && (
-          <button onClick={handleTurno}>
-            {!turnoZombie ? "¡Corre por Luffy!" : "Mueve al zombie"}
-          </button>
+          <button onClick={handleTurno}>¡Corre por Luffy!</button>
         )}
       </section>
     </>

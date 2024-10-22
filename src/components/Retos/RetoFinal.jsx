@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 // estilos
 import styles from "./Retos.module.css";
+import stylesAnimaciones from "../Intro/Intro.module.css";
 
 // componentes
 import { Toaster, toast } from "sonner";
@@ -17,8 +18,8 @@ export default function RetoFinal() {
   const [bucleInfinito, setBucleInfinito] = useState(false);
   const [temporizador, setTemporizador] = useState(66);
   const [respuestas, setRespuestas] = useState({
-    respuesta1: `undefined`,
-    respuesta2: `undefined`,
+    respuesta1: `696`,
+    respuesta2: `696`,
   });
 
   // zustand
@@ -69,7 +70,7 @@ export default function RetoFinal() {
       toast.success("¡Has salvado al mundo y a tu michi!", {
         action: (
           <Link href="/">
-            <button>Vuelve al inicio</button>
+            <button>Volver a jugar</button>
           </Link>
         ),
         duration: 6666,
@@ -96,6 +97,11 @@ export default function RetoFinal() {
   useEffect(() => {
     !bucleInfinito && handleJuegoGanado();
   }, [bucleInfinito, respuestas.respuesta1, respuestas.respuesta2]);
+
+  // efecto para que la ventana se desplace al inicio al cargar el componente en dispositivos móviles
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -126,7 +132,7 @@ export default function RetoFinal() {
       </div>
 
       <section className={!bucleInfinito ? styles.RetoFinal : styles.none}>
-        <h2 className={styles.flicker}>Reto Final</h2>
+        <h2 className={styles.textoFantasma}>Reto Final</h2>
         <div>
           <h3>
             if (bucleInfinito === true) {"{"} <br />
@@ -148,15 +154,21 @@ export default function RetoFinal() {
 
         <p>Felicidades, haz llegado al reto final.</p>
         <p>
-          Este reto tiene doble propósito: salvar al mundo y evitar que tu gato se convierta en un mostruo animal que se olvidará de ti ¡Se te acaba el tiempo!
+          Este reto tiene doble propósito: salvar a las funciones del mundo y
+          evitar que tu gato se convierta en un mostruo animal que se olvidará
+          de ti ¡Se te acaba el tiempo!
         </p>
         <p>
-          Cada código en esta página tiene la capacidad de crear un bucle infinito. Completa ambos códigos de forma correcta antes de
-          que el temporizador llegue a 0.
+          Cada código en esta página tiene la capacidad de crear un bucle
+          infinito. Completa ambos códigos de forma correcta antes de que el
+          temporizador llegue a 0. Solo hay una respuesta correcta para cada
+          código.
         </p>
         <p>
-          Si te equivocas, <span className={styles.flickerDos}>the_Undefined</span>{" "} tomará al mundo, tu amigo gatuno no
-          será el mismo, y será el fin de la programación.
+          Si te equivocas y se acaba el tiempo,{" "}
+          <span className={stylesAnimaciones.flickerDos}>the_Undefined</span>{" "}
+          tomará al mundo, tu amigo gatuno no será el mismo, y será el fin de la
+          programación.
         </p>
         <p>
           Al lado del temporizador está tu gatito para recordarte que no tienes

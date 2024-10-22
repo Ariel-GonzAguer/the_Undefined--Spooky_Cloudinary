@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 // estilos
 import styles from "./Retos.module.css";
+import stylesAnimaciones from "../Intro/Intro.module.css";
 
 // wouter
 import { Link } from "wouter";
@@ -66,6 +67,11 @@ export default function Reto1() {
     }
   }, [allTrue, wrongAnswer]);
 
+  // efecto para que la ventana se desplace al inicio al cargar el componente en dispositivos móviles
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Toaster
@@ -82,7 +88,9 @@ export default function Reto1() {
           salvarse"
         </h3>
         <p>
-          Uno de estos felinos es un aliado de the_Undefined, disfrazado de michi.
+          Uno de estos felinos es un aliado de{" "}
+          <span className={stylesAnimaciones.flicker}>the_Undefined</span>, disfrazado de
+          michi.
         </p>
         <p>
           Tres gatitos dicen algo cierto, uno te dice algo falso ¿puedes
@@ -96,8 +104,8 @@ export default function Reto1() {
 
         <p>
           {" "}
-          Si haces click sobre el gatito que miente, verás al temible aliado y tendrás que volver a
-          empezar.
+          Si haces click sobre el gatito que miente, verás al temible aliado y
+          tendrás que volver a empezar.
         </p>
 
         <section className={styles.michisGrid}>
