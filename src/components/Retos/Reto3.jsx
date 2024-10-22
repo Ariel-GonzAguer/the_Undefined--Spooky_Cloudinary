@@ -29,7 +29,9 @@ export default function Reto3() {
   function respuestaErronea() {
     setError(true);
     toast.error(`Has fallado. Refresca la página para volver a interlo`, {
-      duration: 6666,
+       action: (
+        <button style={{width: "100px"}} onClick={() => window.location.reload()}>Refrescar</button>
+      )
     });
   }
 
