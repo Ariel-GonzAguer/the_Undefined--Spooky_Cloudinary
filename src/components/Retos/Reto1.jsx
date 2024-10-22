@@ -36,7 +36,7 @@ export default function Reto1() {
     setWrongAnswer(true);
     toast.error(`Has fallado. Refresca la página para volver a interlo`, {
       action: (
-        <button onClick={() => window.location.reload()}>Refrescar</button>
+        <button style={{width: "100px"}} onClick={() => window.location.reload()}>Refrescar</button>
       )
     });
   }
