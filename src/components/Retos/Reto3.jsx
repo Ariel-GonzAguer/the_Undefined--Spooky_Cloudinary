@@ -172,7 +172,7 @@ export default function Reto3() {
             {"}"}
           </p>
           <p>{""}</p>
-          <p onClick={() => respuestaCorrecta(6)}>alimentar('Sundae'{"}"};</p>
+          <p onClick={() => respuestaCorrecta(6)}>alimentar('Sundae'{"]"},</p>
           {/* Error de sintaxis */}
           <p>{""}</p>
         </section>
