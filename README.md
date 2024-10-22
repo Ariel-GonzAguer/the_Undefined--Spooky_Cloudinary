@@ -16,7 +16,6 @@ It's a game in which you have to defeat the_Undefined, an entity that wants to b
 The user must pass three programming-related challenges to reach the final challenge against the_Undefined.
 
 Cloudinary's AI is used in this project to convert three photos that the user uploads to the platform, plus a prompt also chosen by the user, which will change a photo already stored on the Cloudinary platform.
-In addition, AI was used to modify an image that can be shown in Challenge 1, according to the user's choices.
 
 ## Tech Stack
 
