@@ -35,7 +35,9 @@ export default function Reto1() {
     setGato2ZombieState(true);
     setWrongAnswer(true);
     toast.error(`Has fallado. Refresca la página para volver a interlo`, {
-      duration: 6666,
+      action: (
+        <button onClick={() => window.location.reload()}>Refrescar</button>
+      )
     });
   }
 
