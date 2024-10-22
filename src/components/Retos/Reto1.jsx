@@ -75,7 +75,7 @@ export default function Reto1() {
         richColors
       />
       <section className={styles.Reto1}>
-        <h2>Reto I</h2>
+        <h2 className={styles.textoFantasma}>Reto I</h2>
         <h3>
           {" "}
           Michi === false ? "the_Undefined toma el mundo" : "El mundo aún puede
