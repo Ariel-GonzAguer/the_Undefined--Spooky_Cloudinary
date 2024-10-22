@@ -7,7 +7,6 @@ Es un juego en el que hay que derrotar a **the_Undefined**, una entidad que quie
 La persona usuaria debe pasar tres retos relacionados con programación, para llegar al reto final contra the_Undefined.
 
 La IA de Cloudinary se usa en este proyecto para convertir tres fotos que la persona usuaria sube a la plataforma, más un prompt también elegido por la persona usuaria, que cambiará una foto ya almacenada en la plataforma de Cloudinary.\
-Además, la IA se usó para modificar una imagen que se puede mostrar en el Reto 1, según las elecciones de la persona usuaria.
 
 ***English (only this part of the Readme is translated 😊)***
 This project was made specifically to participate in the Cloudinary Spooky AI Hackathon + MiduDev.
