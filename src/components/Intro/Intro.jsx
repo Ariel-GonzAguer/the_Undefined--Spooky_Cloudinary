@@ -34,7 +34,7 @@ export default function Intro() {
         }`}
       >
         <div className={styles.divH1}>
-          <h1 className={`${styles.flicker}`}>the_Undefined</h1>
+          <h1 className={styles.flicker}>the_Undefined</h1>
         </div>
 
         <p>
