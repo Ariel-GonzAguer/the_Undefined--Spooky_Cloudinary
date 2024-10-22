@@ -94,7 +94,7 @@ export default function Reto2() {
         richColors
       />
       <section className={styles.Reto2}>
-        <h2>Reto 2</h2>
+        <h2 className={styles.textoFantasma}>Reto 2</h2>
         <h3> let suerte = Math.floor( Math.random( ) )</h3>
         <p>
           ¿Lograste descubrir al michi falso por suerte, o realmente sabías la
