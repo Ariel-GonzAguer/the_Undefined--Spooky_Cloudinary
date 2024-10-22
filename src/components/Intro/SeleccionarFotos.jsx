@@ -319,6 +319,7 @@ export default function SeleccionarFotos() {
         <section className={styles.SpookyPrompt}>
           <label> Selecciona una opción:</label>
           <select name="spookyPrompt" onChange={handleChangePrompt} className={styles.select}>
+            <option value="" disabled selected>Elige una opción</option>
             <option value="scary straw man">Hombre de paja</option>
             <option value="crazy doctor eating blood without eyes">
               Doctor Macabro
