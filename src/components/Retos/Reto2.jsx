@@ -7,8 +7,9 @@ import stylesAnimaciones from "../Intro/Intro.module.css";
 // zustand
 import useMonsterStore from "../Zustand/monsterStore";
 
-// componentes
+// componentes y hooks
 import { toast, Toaster } from "sonner";
+import useSpookyRisa from "../../customHooks/useSpookyRisa";
 
 // imagenes
 import Luffy from "/imgs/Luffy2.png";
@@ -18,12 +19,14 @@ import { Link } from "wouter";
 
 export default function Reto2() {
   // esados para el reto
-  const [turnoZombie, setTurnoZombie] = useState(false);
   const [posicionJugador, setPosicionJugador] = useState(3);
   const [posicionZombie, setPosicionZombie] = useState(0);
   const [pasosArray, setPasosArray] = useState(
     new Array(26).fill(<span></span>)
   );
+
+  // custom hook para el audio
+  const playSpookyRisa = useSpookyRisa();
 
   // zombie de zustand
   const { spookyImagesInStore } = useMonsterStore((state) => state);
@@ -43,6 +46,7 @@ export default function Reto2() {
   function moverZombie() {
     let nuevaPosicion = posicionZombie + getRandomNumber();
     setPosicionZombie(nuevaPosicion);
+
     console.log("zombie", nuevaPosicion); //BORRAR
   }
 
@@ -56,7 +60,12 @@ export default function Reto2() {
   useEffect(() => {
     const newPasosArray = new Array(23).fill("");
     newPasosArray[posicionJugador] = (
-      <img src={Luffy} alt="" className={styles.miniZombie} />
+      <img
+        src={Luffy}
+        alt=""
+        className={styles.miniZombie}
+        onClick={handleTurno}
+      />
     );
     newPasosArray[posicionZombie] = (
       <img src={zombie} alt="" className={styles.miniZombie} />
@@ -81,13 +90,19 @@ export default function Reto2() {
   }, [posicionJugador]);
 
   useEffect(() => {
-    if (posicionZombie >= 23 || posicionZombie >= posicionJugador) {
+    if (posicionZombie >= posicionJugador) {
+      playSpookyRisa();
       toast.error(
         "Se acabó... tu versión zombie te ha comido... Reinicia la página para volver a intentarlo",
         {
-           action: (
-        <button style={{width: "100px"}} onClick={() => window.location.reload()}>Refrescar</button>
-      )
+          action: (
+            <button
+              style={{ width: "100px" }}
+              onClick={() => window.location.reload()}
+            >
+              Refrescar
+            </button>
+          ),
         }
       );
     }
@@ -113,20 +128,15 @@ export default function Reto2() {
           ¿Lograste descubrir al michi falso por suerte, o realmente sabías la
           respuesta?{" "}
         </p>
-
         <p>
-          {" "}
-          Si solo fue suerte, esperemos siga así, pues en este Reto la
-          necesitarás, y el Midugato está en juego.
+          En este Reto necesitas suerte pues deberás salvar a Luffy de tu
+          versión zombie, pero tus pasos son aleatorios, el camino está lleno de
+          calabazas temblorosas y el muerto viviente a veces es más rápido que
+          tú.
         </p>
         <p>
-          Deberás salvar a Luffy de tu versión zombie, pero tus pasos son
-          aleatorios, el camino está lleno de calabazas temblorosas y el muerto
-          viviente a veces es más rápido que tú.
-        </p>
-        <p>
-          Si no logras llegar al final del camino antes que tu versión
-          terrorífica y zómbica, no hay futuro para la programación y{" "}
+          Si no logras llegar al final del camino antes que tu versión zómbica,
+          no hay futuro para la programación y{" "}
           <span className={stylesAnimaciones.flicker}>the_Undefined</span>{" "}
           tendrá al pequeño Luffy dentro de su scope. Tienes varios pasos de
           ventaja, pero ¿será eso suficiente?
@@ -139,10 +149,6 @@ export default function Reto2() {
             </div>
           ))}
         </section>
-
-        {posicionJugador > posicionZombie && (
-          <button onClick={handleTurno}>¡Corre por Luffy!</button>
-        )}
       </section>
     </>
   );

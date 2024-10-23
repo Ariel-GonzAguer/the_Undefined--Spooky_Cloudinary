@@ -1,6 +1,8 @@
 /* Reto I */
 .Reto1 {
   margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +10,22 @@
   text-align: center;
   padding: 0 3rem;
   cursor: default;
+  color: var(--blanco);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/imgs/Designer-microsoft-ia-animal-monster.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(0.4);
+    z-index: -1;
+  }
 
   & h2 {
     font-size: 2.5rem;
@@ -27,10 +45,10 @@
   & .michisGrid {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-    gap: 3rem;
+    gap: 3.1rem;
     margin: 1rem auto 2rem;
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
 
     & div {
       display: flex;
@@ -44,8 +62,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 50px;
-        border: 6px solid #9473b4;
+        border: 9px solid var(--tierra);
+        outline: 5px solid var(--amarillo);
+        border-radius: 30px;
       }
     }
 
@@ -97,6 +116,7 @@
 /* Reto II */
 .Reto2 {
   margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +124,22 @@
   text-align: center;
   padding: 0 3rem;
   cursor: default;
+  color: var(--blanco);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/imgs/freepik__pixel-art-8bits-a-horde-of-dark-zombies-emerging-f__67828.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(0.4);
+    z-index: -1;
+  }
 
   & h2 {
     font-size: 2.5rem;
@@ -156,21 +192,6 @@
       & p {
         margin: 0 auto;
       }
-    }
-  }
-
-  & button {
-    width: 200px;
-    height: 50px;
-    margin: 1rem;
-    font-size: 1.5rem;
-    background-color: #6a627b;
-    color: #fff6ff;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #4a294a;
-      color: #ff9494;
     }
   }
 }
@@ -281,6 +302,7 @@
 /* Reto III */
 .Reto3 {
   margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -288,6 +310,22 @@
   text-align: center;
   padding: 0 3rem 3rem;
   cursor: default;
+  color: var(--blanco);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/imgs/freepik__pixel-art-8bits-a-terrifying-scene-featuring-a-red__67829.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(0.666);
+    z-index: -1;
+  }
 
   & p {
     line-height: 2rem;
@@ -306,9 +344,9 @@
 
   & .retoCodigo {
     text-align: left;
-    background-color: #4a294a;
-    color: #ff9494;
-    border: 6px solid black;
+    background-color: var(--vino);
+    color: var(--amarillo);
+    border: 6px solid var(--anaranjado);
     padding: 1rem;
     margin: 2rem auto;
 
@@ -316,7 +354,7 @@
       cursor: pointer;
       border: 2px solid transparent;
 
-      &:hover{
+      &:hover {
         border: 2px solid white;
       }
     }
@@ -333,11 +371,14 @@
   object-fit: cover;
   margin: 0 auto;
   margin: 0 auto;
+  position: relative;
+  background-color: var(--negro);
 
   & img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    position: absolute;
   }
 }
 
@@ -397,6 +438,24 @@
   padding: 0 3rem;
   cursor: default;
   text-align: center;
+  position: relative;
+  color: var(--blanco);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/imgs/Designer-microsoft-undefined-representation.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(0.4);
+    z-index: -1;
+    color: var(--blanco);
+  }
 
   & h2 {
     font-size: 2.5rem;
@@ -416,37 +475,30 @@
   }
 
   & .temporizadorYMichi {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
+    position: relative;
+    width: 666px;
+    max-width: 100%;
+    margin: 2rem auto 3rem;
 
     & .temporizador {
-      flex: 1;
-      width: 50%;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff6ff;
-      background-image: url("/imgs/murcielago.svg");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: white; /* Asegúrate de que el texto sea visible sobre la imagen */
+      text-align: center;
     }
     & .tuMichi {
-      width: 50%;
-      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
       & .gatoOriginal {
-        border-radius: 100%;
-        width: 300px;
-        height: 300px;
-        margin: 2rem auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
       }
     }
   }
@@ -457,8 +509,8 @@
     max-width: 500px;
     max-height: 500px;
     object-fit: cover;
-    box-shadow: inset 0 0 10px 5px #000, 0 0 10px #000;
-    border: 6px solid orange;
+    border: 9px solid var(--vino);
+    outline: 5px solid var(--tierra);
   }
 
   .bucles {
@@ -479,8 +531,10 @@
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      border: 6px solid black;
+      border: 6px solid var(--amarillo);
+      background-color: var(--vino);
       padding: 1rem 1rem 2rem;
+      color: var(--verdeClaro);
 
       & label {
         margin: 2rem auto;
@@ -510,28 +564,29 @@
       top: 5px;
     }
   }
+
+  .demonioVisible {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    margin: 0 auto;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--negro);
+
+    & img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      position: absolute;
+    }
+  }
 }
 
 @media only screen and (max-width: 450px) {
   .RetoFinal {
     & h3 {
       width: 99vw;
-    }
-
-    & .temporizadorYMichi {
-      flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
-      align-items: center;
-
-      & .temporizador,
-      & .tuMichi {
-        width: 100%; /* Asegura que los elementos ocupen el 100% del ancho */
-        height: auto; /* Ajusta la altura automáticamente */
-      }
-
-      & .tuMichi .gatoOriginal {
-        width: 200px; /* Ajusta el tamaño de la imagen del gato */
-        height: 200px;
-      }
     }
 
     & h2 {

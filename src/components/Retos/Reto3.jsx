@@ -10,8 +10,9 @@ import useMonsterStore from "../Zustand/monsterStore";
 // wouter
 import { Link } from "wouter";
 
-// componentes
+// componentes y hooks
 import { toast, Toaster } from "sonner";
+import useSpookyRisa from "../../customHooks/useSpookyRisa";
 
 export default function Reto3() {
   // esados para el reto
@@ -21,17 +22,26 @@ export default function Reto3() {
     new Set()
   );
 
+  // custom hook para el audio
+  const playSpookyRisa = useSpookyRisa();
+
   // demonio de zustand
   const { spookyImagesInStore } = useMonsterStore((state) => state);
   const demonio = spookyImagesInStore.demonio;
 
   // handlers
   function respuestaErronea() {
+    playSpookyRisa();
     setError(true);
     toast.error(`Has fallado. Refresca la página para volver a interlo`, {
-       action: (
-        <button style={{width: "100px"}} onClick={() => window.location.reload()}>Refrescar</button>
-      )
+      action: (
+        <button
+          style={{ width: "100px" }}
+          onClick={() => window.location.reload()}
+        >
+          Refrescar
+        </button>
+      ),
     });
   }
 

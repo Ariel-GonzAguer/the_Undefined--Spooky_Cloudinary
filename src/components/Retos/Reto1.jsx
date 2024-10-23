@@ -7,8 +7,9 @@ import stylesAnimaciones from "../Intro/Intro.module.css";
 // wouter
 import { Link } from "wouter";
 
-// componentes
+// componentes y hooks
 import { toast, Toaster } from "sonner";
+import useSpookyRisa from "../../customHooks/useSpookyRisa";
 
 // imagenes
 import gato1 from "/imgs/gato1.jpg";
@@ -26,18 +27,27 @@ export default function Reto1() {
   const [wrongAnswer, setWrongAnswer] = useState(false);
   const [allTrue, setAllTrue] = useState(false);
 
+  // custom hook para el audio
+  const playSpookyRisa = useSpookyRisa();
+
   // prompted img
   const { spookyImagesInStore } = useMonsterStore((state) => state);
   const promptedImg = spookyImagesInStore.prompted;
 
   // handles
   function handleRespuestaIncorrecta() {
+    playSpookyRisa();
     setGato2ZombieState(true);
     setWrongAnswer(true);
     toast.error(`Has fallado. Refresca la página para volver a interlo`, {
       action: (
-        <button style={{width: "100px"}} onClick={() => window.location.reload()}>Refrescar</button>
-      )
+        <button
+          style={{ width: "100px" }}
+          onClick={() => window.location.reload()}
+        >
+          Refrescar
+        </button>
+      ),
     });
   }
 
@@ -91,8 +101,8 @@ export default function Reto1() {
         </h3>
         <p>
           Uno de estos felinos es un aliado de{" "}
-          <span className={stylesAnimaciones.flicker}>the_Undefined</span>, disfrazado de
-          michi.
+          <span className={stylesAnimaciones.flicker}>the_Undefined</span>,
+          disfrazado de michi.
         </p>
         <p>
           Tres gatitos dicen algo cierto, uno te dice algo falso ¿puedes
@@ -120,7 +130,7 @@ export default function Reto1() {
               src={rightAnswers[0] === null ? gato1 : correcto}
               alt="lindo y tierno gato"
             />
-            <p>console.log(typeof ([ ] + [ ]) === "string");</p>
+            <p>console.log([].length {">"} 0);</p>
           </div>
 
           <div

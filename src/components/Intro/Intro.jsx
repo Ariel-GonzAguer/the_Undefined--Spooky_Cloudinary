@@ -1,38 +1,15 @@
-import { useState } from "react";
-
+// estilos
 import styles from "./Intro.module.css";
 
-import { toast, Toaster } from "sonner";
+// componentes
+
+// wouter
 import { Link } from "wouter";
 
 export default function Intro() {
-  const [seleccion, setSeleccion] = useState(null);
-
-  function handleSeleccion(e) {
-    const value = e.target.value;
-    setSeleccion(value);
-
-    if (value === "entrar") {
-      console.log("seleccion ->", seleccion); // BORRAR AL FINAL
-    } else if (value === "huir") {
-      toast(`Ahora puedes cerrar la ventana o refrescarla para volver.`, {
-        duration: 6666,
-      });
-    }
-  }
-
   return (
     <>
-      <Toaster position="bottom-center" closeButton visibleToasts={1} />
-      <section
-        className={`${
-          seleccion === null || seleccion === "entrar"
-            ? styles.Intro
-            : seleccion === "huir"
-            ? styles.none
-            : " "
-        }`}
-      >
+      <section className={styles.Intro}>
         <div className={styles.divH1}>
           <h1 className={styles.flicker}>the_Undefined</h1>
         </div>
@@ -40,36 +17,35 @@ export default function Intro() {
         <p>
           Es 31 de octubre del 2024...
           <br />
-          De entre las nubes, algo, un mostruo, una entidad desconocida, llamada{" "}
-          <span className={`${styles.flickerDos}`}>the_Undefined</span>, ha llegado
-          con terribles planes para el mundo de la programación.
+          De entre las nubes, una entidad inefable, ahora conocida como{" "}
+          <span className={`${styles.flickerDos}`}>the_Undefined</span>, ha
+          llegado con terribles planes para el mundo de la programación.
           <br />
-          Su objetivo principal es ser el resultado de todas las funciones a partir
-          de ahora.
-          <br />
-          <br />
-          ¡Noooooooo!
+          Su objetivo principal es ser el resultado de todas las funciones a
+          partir de ahora.
           <br />
           <br />
-          Vence a los aliados de{" "}
-          <span className={`${styles.blinkDos}`}>the_Undefined</span>,
-          resolviendo tres retos relacionados con la programación para
-          enfrentarte a él.
+          <span className={styles.nooo}>¡Noooooooo!</span>
           <br />
-          Derrota a <span className={`${styles.flickerCinco}`}>the_Undefined</span>{" "}y
+          <br />
+          Vence a los terroríficos aliados de{" "}
+          <span className={`${styles.flickerCien}`}>the_Undefined</span>,
+          resolviendo tres retos relacionados con la Javascript, para
+          enfrentarte al maligno ser.
+          <br />
+          Derrota a{" "}
+          <span className={`${styles.flickerCinco}`}>the_Undefined</span> y
           salva al mundo, o huye ahora...
         </p>
 
         <section className={styles.buttonsContainer}>
           <Link href="/SeleccionarFotos">
-            <button value="entrar" onClick={handleSeleccion}>
-              Entrar
-            </button>
+            <button>Entrar</button>
           </Link>
 
-          <button value="huir" onClick={handleSeleccion}>
-            Huir
-          </button>
+          <Link href="/Huir">
+            <button>Huir</button>
+          </Link>
         </section>
       </section>
     </>

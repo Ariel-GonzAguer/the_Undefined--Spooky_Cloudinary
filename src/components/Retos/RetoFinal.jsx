@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import styles from "./Retos.module.css";
 import stylesAnimaciones from "../Intro/Intro.module.css";
 
-// componentes
+// componentes y hooks
 import { Toaster, toast } from "sonner";
+import useSpookyRisa from "../../customHooks/useSpookyRisa";
 
 // wouter
 import { Link } from "wouter";
@@ -21,6 +22,9 @@ export default function RetoFinal() {
     respuesta1: `696`,
     respuesta2: `696`,
   });
+
+  // custom hook para la risa
+  const playSpookyRisa = useSpookyRisa();
 
   // zustand
   const { spookyImagesInStore } = useMonsterStore((state) => state);
@@ -44,6 +48,7 @@ export default function RetoFinal() {
 
   function handleJuegoPerdido() {
     if (bucleInfinito === true) {
+      playSpookyRisa();
       toast.error(
         "Dile adiós a tu michi...o reinicia la página y vuelve a intentarlo",
         {
@@ -112,19 +117,17 @@ export default function RetoFinal() {
         richColors
       />
 
-      <div className={bucleInfinito ? styles.demonioVisible : styles.none}>
-        <img src={gato} alt="gato macabro" />
-      </div>
       <div
         className={bucleInfinito ? styles.demonioVisible : styles.none}
-        style={{
-          position: "absolute",
-          zIndex: "666",
-          top: "5%",
-          textAlign: "center",
-          fontSize: "4rem",
-        }}
+        // style={{
+        //   position: "absolute",
+        //   zIndex: "666",
+        //   top: "5%",
+        //   textAlign: "center",
+        //   fontSize: "4rem",
+        // }}
       >
+        <img src={gato} alt="gato macabro" />
         {bucleInfinito &&
           toast.error("Bucle infinito activado. the_Undefined ha vencido...", {
             duration: 6666,
@@ -170,16 +173,11 @@ export default function RetoFinal() {
           tomará al mundo, tu amigo gatuno no será el mismo, y será el fin de la
           programación.
         </p>
-        <p>
-          Al lado del temporizador está tu gatito para recordarte que no tienes
-          tiempo que perder
-        </p>
 
         <div className={styles.temporizadorYMichi}>
           <section className={styles.temporizador}>
             <p className={styles.heartbeat}>
-              Te quedan <br />
-              <span>{temporizador}</span>
+              Te quedan <span>{temporizador}</span>
               <br /> segundos para salvar a tu michi
             </p>
           </section>
@@ -203,7 +201,7 @@ export default function RetoFinal() {
               <span>&nbsp;&nbsp;&nbsp;</span>alert (cl);
               <br />
               <span>&nbsp;&nbsp;&nbsp;</span>
-              i--{"}"};
+              i--{"}"} <br />;
             </p>
             <label>
               Respuesta 1:

@@ -48,6 +48,7 @@ export default function SeleccionarFotos() {
   const cld = new Cloudinary({ cloud: { cloudName: "arielcloudinary" } });
 
   //estados para UI
+
   // prompted
   useEffect(() => {
     if (spookyPrompt) {
@@ -79,7 +80,7 @@ export default function SeleccionarFotos() {
         const imgDemonio = cld
           .image(uploadResultDemonio.info.public_id)
           .effect(generativeReplace().from("person").to("demoniac monster"))
-          .resize(scale().width(400));
+          .resize(scale().width(1000));
         setImageLoadedDemonio(imgDemonio);
         setImageReadyDemonio(false);
         setSpookyImages((prev) => ({ ...prev, demonio: imgDemonio.toURL() }));
@@ -184,6 +185,11 @@ export default function SeleccionarFotos() {
     spookyImages.zombie &&
     spookyImages.prompted &&
     spookyPrompt;
+
+  // efecto para que la ventana se desplace al inicio al cargar el componente en dispositivos móviles
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -318,8 +324,15 @@ export default function SeleccionarFotos() {
 
         <section className={styles.SpookyPrompt}>
           <label> Selecciona una opción:</label>
-          <select name="spookyPrompt" onChange={handleChangePrompt} className={styles.select}>
-            <option value="" disabled selected>Elige una opción</option>
+          <select
+            name="spookyPrompt"
+            onChange={handleChangePrompt}
+            className={styles.select}
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Elige una opción
+            </option>
             <option value="scary straw man">Hombre de paja</option>
             <option value="crazy doctor eating blood without eyes">
               Doctor Macabro
@@ -329,8 +342,12 @@ export default function SeleccionarFotos() {
         </section>
 
         <Link href={isReadyToProceed ? "/Reto1" : "#"}>
-          <button onClick={handleComenzarRetos} disabled={!isReadyToProceed} className={styles.comenzar}>
-            { isReadyToProceed ? "Comenzar" : "Aún no puedes comenzar" } 
+          <button
+            onClick={handleComenzarRetos}
+            disabled={!isReadyToProceed}
+            className={styles.comenzar}
+          >
+            {isReadyToProceed ? "Comenzar" : "Aún no puedes comenzar"}
           </button>
         </Link>
       </section>

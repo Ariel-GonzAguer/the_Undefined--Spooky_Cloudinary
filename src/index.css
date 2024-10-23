@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Press Start 2P";
-  src: url("/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
-    format("truetype");
+  src: url("/fonts/Press_Start_2P/PressStart2P-Regular.ttf") format("truetype");
   font-display: swap;
   /*este atributo:valor aseguran que se muestre el texto mientras cargan las fuentes, de otra manera el texto aparece "invisible"*/
 }
@@ -12,10 +11,23 @@
   box-sizing: border-box;
 }
 
-html, body {
+/* variables */
+:root {
+  --morado: #9e1fff;
+  --negro: #0e0f14;
+  --anaranjado: #ffa52e;
+  --verdeClaro: #caff37;
+  --vino: #5d2646;
+  --amarillo: #eec80c;
+  --tierra: #ba3a14;
+  --blanco: #fff;
+  --hueso: #f5eed1;
+}
+
+html,
+body {
   height: 100%;
   width: 100%;
   font-size: 16px;
   font-family: "Press Start 2P", monospace;
-  background-color: #b48bbd;
 }

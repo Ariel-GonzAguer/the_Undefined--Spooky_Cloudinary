@@ -32,7 +32,12 @@ export default function UploadWidget({ onUpload }) {
 
   return (
     <>
-      <Toaster position="bottom-center" closeButton visibleToasts={1} richColors />
+      <Toaster
+        position="bottom-center"
+        closeButton
+        visibleToasts={1}
+        richColors
+      />
       <div>
         <button onClick={() => widgetRef.current.open()}>Upload</button>
       </div>
