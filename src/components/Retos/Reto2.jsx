@@ -139,7 +139,7 @@ export default function Reto2() {
           no hay futuro para la programación y{" "}
           <span className={stylesAnimaciones.flicker}>the_Undefined</span>{" "}
           tendrá al pequeño Luffy dentro de su scope. Tienes varios pasos de
-          ventaja, pero ¿será eso suficiente?
+          ventaja, pero ¿será eso suficiente? Haz click sobre Luffy para moverte.
         </p>
 
         <section className={styles.camino}>
