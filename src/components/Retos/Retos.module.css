@@ -401,8 +401,8 @@ width: 90%
       margin-top: 2rem;
 
       & p {
-        font-size: 0.9rem;
-        width: 100vw;
+        font-size: 0.85rem;
+        width: 90vw;
         word-wrap: break-word;
       }
 
