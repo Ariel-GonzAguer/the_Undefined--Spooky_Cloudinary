@@ -607,10 +607,11 @@ padding: 0;
     & .bucles {
       font-size: 1rem;
       margin-bottom: 2rem;
-      width: 90%;
+      width: 90vw;
 
       & .bucle1,
       .bucle2 {
+border: 3px solid var(--amarillo);
         & p {
           width: 90vw;
           line-height: 2rem;
