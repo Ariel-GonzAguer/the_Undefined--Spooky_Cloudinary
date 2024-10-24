@@ -98,17 +98,13 @@
     }
 
     & .michisGrid {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-gap: 0;
+      display: block;
+      width: 90vw;
 margin: 2rem auto;
 
       & div {
-width: 90%
+width: 100%
+margin: 1rem auto;
 }
 
       & p {
