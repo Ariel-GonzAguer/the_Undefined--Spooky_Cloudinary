@@ -88,6 +88,7 @@
 
 @media only screen and (max-width: 450px) {
   .Reto1 {
+padding: 0;
     h2 {
       font-size: 2rem;
       text-align: center;
