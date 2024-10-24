@@ -112,8 +112,8 @@ width: 90%
 }
 
       & p {
-        font-size: 1rem;
-        width: 90%;
+        font-size: 0.8rem;
+        width: 90vw;
       }
     }
   }
