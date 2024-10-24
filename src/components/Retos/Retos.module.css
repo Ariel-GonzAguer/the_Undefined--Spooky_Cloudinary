@@ -98,14 +98,17 @@
     }
 
     & .michisGrid {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 90vw;
-margin: 2rem auto;
+      margin: 2rem auto;
+      overflow: hidden; /* Evita que el contenido se desborde */
 
       & div {
-width: 100%
-margin: 1rem auto;
-}
+        width: 100%;
+        margin: 1rem auto;
+      }
 
       & p {
         font-size: 0.8rem;
