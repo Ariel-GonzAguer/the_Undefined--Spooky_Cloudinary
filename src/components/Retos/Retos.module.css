@@ -88,7 +88,7 @@
 
 @media only screen and (max-width: 450px) {
   .Reto1 {
-    padding: 1rem;
+padding: 0;
     h2 {
       font-size: 2rem;
       text-align: center;
@@ -100,15 +100,20 @@
 
     & .michisGrid {
       display: flex;
-      flex-wrap: wrap;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      gap: 1rem;
+      width: 90vw;
+      margin: 2rem auto;
+      overflow: hidden; /* Evita que el contenido se desborde */
+
+      & div {
+        width: 100%;
+        margin: 1rem auto;
+      }
 
       & p {
-        font-size: 1rem;
-        width: 90%;
+        font-size: 0.8rem;
+        width: 90vw;
       }
     }
   }
@@ -398,8 +403,8 @@
       padding: 0.5rem;
 
       & p {
-        font-size: 0.9rem;
-        width: 100vw;
+        font-size: 0.85rem;
+        width: 90vw;
         word-wrap: break-word;
       }
 
@@ -604,10 +609,11 @@
     & .bucles {
       font-size: 1rem;
       margin-bottom: 2rem;
-      width: 90%;
+      width: 90vw;
 
       & .bucle1,
       .bucle2 {
+border: 3px solid var(--amarillo);
         & p {
           width: 90vw;
           line-height: 2rem;

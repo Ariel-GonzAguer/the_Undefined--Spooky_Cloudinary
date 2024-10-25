@@ -42,7 +42,7 @@ export default function Huir() {
           <h1
             className={styles.flicker}
             style={{
-              fontSize: "3.5rem",
+              fontSize: "1.6rem",
               margin: "2rem auto 3rem",
               backgroundColor: "var(--vino)",
               color: "var(--verdeClaro)",
