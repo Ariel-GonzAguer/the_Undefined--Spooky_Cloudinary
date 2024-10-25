@@ -129,7 +129,7 @@ export default function RetoFinal() {
       >
         <img src={gato} alt="gato macabro" />
         {bucleInfinito &&
-          toast.error("Bucle infinito activado. the_Undefined ha vencido...", {
+          toast.error("Bucle infinito activado. the_Undefined ha vencido... Refresca la página manualmente para volver a intentarlo" , {
             duration: 6666,
           })}
       </div>
@@ -201,7 +201,7 @@ export default function RetoFinal() {
               <span>&nbsp;&nbsp;&nbsp;</span>alert (cl);
               <br />
               <span>&nbsp;&nbsp;&nbsp;</span>
-              i--{"}"} <br />;
+              i--<br />{"}"};
             </p>
             <label>
               Respuesta 1:
@@ -217,6 +217,7 @@ export default function RetoFinal() {
 
           <section className={styles.bucle2}>
             <p className={styles.codigoACorregir}>
+            let cl = 666; <br />
               do {"{"}
               <br />
               console.log(cl, 'the_Undefined vencerá');

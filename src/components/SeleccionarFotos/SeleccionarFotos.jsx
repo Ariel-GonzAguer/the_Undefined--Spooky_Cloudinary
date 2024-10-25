@@ -10,10 +10,11 @@ import { generativeReplace } from "@cloudinary/url-gen/actions/effect";
 import UploadWidget from "../Cloudinary/UploadWidget";
 import { Toaster, toast } from "sonner";
 
-// imagenes
+// imagenes y sonido
 import Sundae from "/imgs/Sundae.jpg";
 import medioCuerpo from "/imgs/medioCuerpoEjemplo.avif";
 import smile from "/imgs/personaEjemplo.jpg";
+// import spookyAmbiente from "../../../public/audios/spooky-halloween-effects-with-thunder-121665-by-Placidplace.mp3";
 
 // styles
 import styles from "./SeleccionarFotos.module.css";
@@ -191,6 +192,14 @@ export default function SeleccionarFotos() {
     window.scrollTo(0, 0);
   }, []);
 
+  // función para sonido de fondo
+  // function handlePlayAudio() {
+  //   const newSpookyAudio = new Audio(spookyAmbiente);
+  //   newSpookyAudio.play().catch((error) => {
+  //     console.error("Error reproduciendo audio:", error);
+  //   });
+  // }
+
   return (
     <>
       <Toaster
@@ -199,7 +208,7 @@ export default function SeleccionarFotos() {
         visibleToasts={1}
         richColors
       />
-      <section className={styles.SeleccionarFotos}>
+      <section className={styles.SeleccionarFotos} >
         <section>
           <h2>
             Has decidido enfentrar a

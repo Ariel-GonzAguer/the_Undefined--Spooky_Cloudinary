@@ -83,7 +83,6 @@ export default function Reto2() {
               <button>Avanza al Reto III</button>
             </Link>
           ),
-          duration: 6666,
         }
       );
     }

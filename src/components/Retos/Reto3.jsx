@@ -42,6 +42,7 @@ export default function Reto3() {
           Refrescar
         </button>
       ),
+      duration: 10000,
     });
   }
 
@@ -53,7 +54,7 @@ export default function Reto3() {
         toast.success(
           `¡Respuesta correcta! faltan ${5 - respuestasCorrectas}`,
           {
-            duration: 6666,
+            duration: 2666,
           }
         );
       }
@@ -68,7 +69,6 @@ export default function Reto3() {
             <button>Avanza al Reto Final</button>
           </Link>
         ),
-        duration: 6666,
       });
     }
   }, [respuestasCorrectas]);
