@@ -88,7 +88,7 @@
 
 @media only screen and (max-width: 450px) {
   .Reto1 {
-padding: 0;
+    padding: 0;
     h2 {
       font-size: 2rem;
       text-align: center;
@@ -593,6 +593,7 @@ padding: 0;
 
 @media only screen and (max-width: 450px) {
   .RetoFinal {
+    padding: 1rem;
     & h3 {
       width: 99vw;
     }
@@ -608,12 +609,13 @@ padding: 0;
 
     & .bucles {
       font-size: 1rem;
+      margin: 0 auto;
       margin-bottom: 2rem;
       width: 90vw;
 
       & .bucle1,
       .bucle2 {
-border: 3px solid var(--amarillo);
+        border: 3px solid var(--amarillo);
         & p {
           width: 90vw;
           line-height: 2rem;
